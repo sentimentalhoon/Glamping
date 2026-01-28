@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Premium Nature Palette */
+  --color-primary: #1A2F23;
+  /* Deep Forest Green */
+  --color-primary-foreground: #F9F9F7;
+
+  --color-secondary: #D4AF37;
+  /* Gold/Bronze */
+  --color-secondary-foreground: #1A2F23;
+
+  --color-background: #F9F9F7;
+  /* Cream/Off-white */
+  --color-foreground: #2C2C2C;
+  /* Charcoal */
+
+  --color-muted: #E5E5E0;
+  --color-muted-foreground: #6B7280;
+
+  --color-accent: #E8F5E9;
+  --color-accent-foreground: #1A2F23;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-foreground: var(--color-secondary-foreground);
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-muted: var(--color-muted);
+  --color-muted-foreground: var(--color-muted-foreground);
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+
+  --font-sans: var(--font-noto-sans), "Pretendard", "Malgun Gothic", sans-serif;
+  --font-serif: var(--font-nanum-myeongjo), "Batang", serif;
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-background: #1A1A1A;
+    --color-foreground: #F9F9F7;
+    --color-muted: #2C2C2C;
+    --color-muted-foreground: #A1A1AA;
+    /* Maintain brand colors but adjust if needed */
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
 }
