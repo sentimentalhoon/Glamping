@@ -1,72 +1,74 @@
-# Deployment Guide - Glamping Project
+# 배포 가이드 - 글램핑 프로젝트 (Deployment Guide - Glamping Project)
 
-This guide outlines the steps to deploy the Glamping project to your Ubuntu server using the shared `infrastructure` setup.
+이 가이드는 `Glamping` 프로젝트를 우분투 서버의 공유 `infrastructure` 환경에 배포하는 절차를 설명합니다.
 
-## Prerequisites
+## 필수 조건 (Prerequisites)
 
-- The server must have the `web-proxy-net` Docker network created.
+- 서버에 `web-proxy-net` 도커 네트워크가 생성되어 있어야 합니다.
   ```bash
   docker network create web-proxy-net
   ```
-  _(This likely already exists if you are running other projects)._
+  _(다른 프로젝트를 이미 실행 중이라면 보통 생성되어 있습니다.)_
 
-## Step 1: Infrastructure Configuration
+## 1단계: 글램핑 앱 실행 (Step 1: Start Glamping Application)
 
-Navigate to your **`infrastructure`** workspace.
+**주의: Nginx 설정을 적용하기 전에 반드시 앱이 먼저 실행되어 있어야 합니다.**
 
-1.  **Update Environment Config**:
-    Run the setup script to generate a new `.env` file including the Glamping domain.
+`Glamping` 프로젝트 폴더로 이동하여 실행합니다.
+
+1.  **빌드 및 실행**:
+    ```bash
+    cd /path/to/Glamping/glampingProject
+    docker compose up -d --build
+    ```
+    _참고: 다음 단계에서 Nginx가 이 앱을 감지할 수 있도록 컨테이너가 켜져 있어야 합니다._
+
+## 2단계: 인프라 설정 (Step 2: Infrastructure Configuration)
+
+`infrastructure` 폴더로 이동합니다.
+
+1.  **환경 변수 업데이트** (아직 하지 않은 경우):
+    설정 스크립트를 실행하여 `.env` 파일을 갱신하고 글램핑 도메인을 추가합니다.
 
     ```bash
     cd /path/to/infrastructure
     ./setup-env.sh
     ```
 
-    - **Primary Domain**: Enter your main domain (e.g., `psmo.community`).
-    - **Email**: Enter your email for Certbot.
-    - **CampStation Domain**: (Enter if applicable, or skip).
-    - **Glamping Domain**: Enter `glamping.duckdns.org`.
+    - **Primary Domain**: 메인 도메인 입력 (예: `psmo.community`).
+    - **Glamping Domain**: `glamping.duckdns.org` 입력.
 
-2.  **Generate SSL & Configs**:
-    Run the initialization script to request SSL certificates and generate Nginx configurations.
+2.  **SSL 및 설정 생성**:
+    초기화 스크립트를 실행하여 SSL 인증서를 요청하고 Nginx 설정을 생성합니다.
     ```bash
     ./init-ssl.sh
     ```
 
-    - This will stop Nginx briefly.
-    - It triggers Certbot to request a certificate for `glamping.duckdns.org` (and others).
-    - It generates `nginx/conf.d/glamping.conf` from the template.
-    - It restarts Nginx.
+    - Nginx가 잠시 중단됩니다.
+    - `glamping.duckdns.org`에 대한 인증서를 Certbot으로 요청합니다.
+    - 템플릿에서 `nginx/conf.d/glamping.conf` 파일을 생성합니다.
+    - Nginx를 재시작합니다.
 
-## Step 2: Deploy Glamping Application
+## 3단계: 배포 확인 (Step 3: Verify Deployment)
 
-Navigate to your **`Glamping`** workspace.
-
-1.  **Build and Start**:
-
-    ```bash
-    cd /path/to/Glamping/glampingProject
-    docker compose up -d --build
-    ```
-
-2.  **Verify**:
-    - Check if the container is running:
+1.  **접속 확인**:
+    - 컨테이너가 실행 중인지 확인:
       ```bash
       docker ps | grep glamping
       ```
-    - Visit **https://glamping.duckdns.org** in your browser.
+    - 브라우저에서 **https://glamping.duckdns.org** 접속.
 
-## Troubleshooting
+## 트러블슈팅 (Troubleshooting)
 
 - **502 Bad Gateway**:
-  - Ensure the `glamping-frontend` container is running.
-  - Check Nginx logs:
+  - `glamping-frontend` 컨테이너가 켜져 있는지 확인하세요.
+  - Nginx 로그 확인:
     ```bash
     cd /path/to/infrastructure
     docker compose logs -f nginx
     ```
-- **SSL Issues**:
-  - If the certificate failed, check initialization logs:
+- **SSL 인증서 오류**:
+  - 인증서 발급 실패 시 초기화 로그 확인:
     ```bash
     cd /path/to/infrastructure
     ./init-ssl.sh
