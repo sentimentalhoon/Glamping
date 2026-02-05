@@ -1,0 +1,15 @@
+services:
+  glamping-frontend:
+    container_name: glamping-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - web-proxy-net
+
+networks:
+  web-proxy-net:
+    external: true
