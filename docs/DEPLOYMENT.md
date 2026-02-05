@@ -40,6 +40,7 @@
 
 2.  **SSL 및 설정 생성**:
     초기화 스크립트를 실행하여 SSL 인증서를 요청하고 Nginx 설정을 생성합니다.
+
     ```bash
     ./init-ssl.sh
     ```
@@ -73,3 +74,64 @@
     cd /path/to/infrastructure
     ./init-ssl.sh
     ```
+
+Glamping 프로젝트 배포 설정 완료 보고서
+이 문서는 Glamping 프로젝트를 Docker 기반의 기존 인프라(infrastructure 공유 네트워크)에 통합하기 위해 수행된 작업 내역과 배포 절차를 설명합니다.
+
+✅ 작업 내역
+
+1. Next.js 프로젝트 설정 (Glamping)
+   Standalone 모드 활성화:
+   next.config.ts
+   에 output: 'standalone'을 추가하여 Docker 이미지 크기를 최적화했습니다.
+   Dockerfile 생성:
+   Multi-stage build를 적용하여 빌드 결과물만 실행 이미지에 포함시켰습니다.
+   Alpine Linux 기반의 경량화된 Node.js 20 이미지를 사용했습니다.
+   Docker Compose 설정:
+   glamping-frontend 서비스를 정의했습니다.
+   web-proxy-net 외부 네트워크에 연결하여 Nginx가 접근할 수 있도록 설정했습니다.
+2. 인프라 설정 (Infrastructure)
+   Nginx 템플릿 추가: glamping.duckdns.org 도메인을 처리하기 위한
+   glamping.conf.template
+   파일을 생성했습니다. (SSL, 보안 헤더 포함)
+   스크립트 업데이트:
+   setup-env.sh
+   : Glamping 및 CampStation 도메인을 입력받도록 개선했습니다.
+   init-ssl.sh
+   : Glamping 도메인에 대한 SSL 인증서를 발급받도록 로직을 추가했습니다.
+   apply-nginx-config.sh
+   : 템플릿을 기반으로 실제 Nginx 설정 파일을 생성하는 로직을 추가했습니다.
+   🚀 배포 가이드 (우분투 서버) -- 순서 중요!
+   반드시 'Glamping 앱'을 먼저 켜야 Nginx 설정이 적용됩니다. (Nginx가 실행 중인 앱을 찾지 못하면 설정 로드를 실패하기 때문입니다.)
+
+1단계: Glamping 앱 실행
+Glamping 프로젝트 폴더로 먼저 이동합니다.
+
+bash
+cd glampingProject
+
+# 컨테이너 빌드 및 실행
+
+docker compose up -d --build
+glamping-frontend 컨테이너가 켜져 있어야 합니다.
+
+2단계: 인프라 구성 업데이트
+이제 infrastructure 폴더로 이동하여 도메인 설정을 적용합니다.
+
+bash
+cd ../infrastructure
+
+# 1. 환경 변수 설정 (최초 1회, 또는 도메인 추가 시)
+
+./setup-env.sh
+
+# -> Glamping Domain 입력란에 'glamping.duckdns.org' 입력
+
+# 2. Nginx 설정 적용 및 SSL (이미 앱이 켜져 있으므로 성공합니다)
+
+./init-ssl.sh
+
+# (이미 SSL을 받은 상태라면 ./apply-nginx-config.sh 만 실행해도 됩니다)
+
+3단계: 접속 확인
+브라우저에서 **https://glamping.duckdns.org**로 접속하여 확인합니다.
