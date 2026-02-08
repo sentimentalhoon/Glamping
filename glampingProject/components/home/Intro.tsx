@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 export function Intro() {
     return (
-        <section className="py-24 bg-background">
-            <div className="container mx-auto px-6">
+        <section className="section-padding bg-background">
+            <div className="container-width">
                 <div className="flex flex-col md:flex-row items-center gap-16">
                     {/* Image */}
                     <motion.div
@@ -16,7 +16,7 @@ export function Intro() {
                         transition={{ duration: 0.8 }}
                         className="w-full md:w-1/2"
                     >
-                        <div className="relative h-[600px] w-full overflow-hidden rounded-lg shadow-2xl">
+                        <div className="relative h-[600px] w-full overflow-hidden rounded-2xl shadow-2xl">
                             <Image
                                 src="/interior.png"
                                 alt="Luxury Glamping Interior"
@@ -34,7 +34,7 @@ export function Intro() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="w-full md:w-1/2 space-y-8"
                     >
-                        <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary break-keep">
+                        <h2 className="section-heading mb-6">
                             숲 속의 은신처
                         </h2>
                         <div className="w-20 h-1 bg-secondary"></div>
@@ -47,7 +47,7 @@ export function Intro() {
                             새소리와 함께 눈을 뜨고, 숨겨진 산책로를 탐험하며,
                             밤에는 별이 쏟아지는 하늘 아래 모닥불 옆에서 하루를 마무리하세요.
                         </p>
-                        <button className="text-primary font-medium tracking-wide border-b-2 border-secondary hover:text-secondary transition-colors pb-1">
+                        <button className="text-primary font-medium tracking-wide border-b-2 border-secondary hover:text-secondary transition-colors pb-1 text-lg">
                             부대시설 자세히 보기
                         </button>
                     </motion.div>

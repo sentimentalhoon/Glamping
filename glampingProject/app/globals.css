@@ -1,29 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  /* Premium Nature Palette */
+  /* Premium Nature Palette - Semantic Naming */
   --color-primary: #1A2F23;
-  /* Deep Forest Green */
+  /* Deep Forest Green - Main Text, Headings */
   --color-primary-foreground: #F9F9F7;
+  /* Cream - Text on Primary */
 
   --color-secondary: #D4AF37;
-  /* Gold/Bronze */
+  /* Gold - Accent, CTA */
   --color-secondary-foreground: #1A2F23;
+  /* Dark Green - Text on Secondary */
 
   --color-background: #F9F9F7;
-  /* Cream/Off-white */
+  /* Cream - Main Background */
   --color-foreground: #2C2C2C;
-  /* Charcoal */
+  /* Charcoal - Body Text */
+
+  --color-surface: #FFFFFF;
+  /* White - Cards, Modals */
+  --color-surface-foreground: #2C2C2C;
 
   --color-muted: #E5E5E0;
+  /* Warm Gray - Borders, Dividers */
   --color-muted-foreground: #6B7280;
+  /* Medium Gray - Secondary Text */
+  --color-border: #E5E5E0;
+
 
   --color-accent: #E8F5E9;
+  /* Light Green - Subtle Backgrounds */
   --color-accent-foreground: #1A2F23;
+
+  /* Typography Scale */
+  --text-display: 5rem;
+  /* 80px */
+  --text-h1: 3.5rem;
+  /* 56px */
+  --text-h2: 2.5rem;
+  /* 40px */
+  --text-h3: 1.5rem;
+  /* 24px */
 
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 }
 
 @theme inline {
@@ -33,8 +55,11 @@
   --color-secondary-foreground: var(--color-secondary-foreground);
   --color-background: var(--color-background);
   --color-foreground: var(--color-foreground);
+  --color-surface: var(--color-surface);
+  --color-surface-foreground: var(--color-surface-foreground);
   --color-muted: var(--color-muted);
   --color-muted-foreground: var(--color-muted-foreground);
+  --color-border: var(--color-border);
   --color-accent: var(--color-accent);
   --color-accent-foreground: var(--color-accent-foreground);
 
@@ -44,15 +69,18 @@
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
   --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #1A1A1A;
+    --color-background: #121212;
     --color-foreground: #F9F9F7;
+    --color-surface: #1E1E1E;
+    --color-surface-foreground: #F9F9F7;
     --color-muted: #2C2C2C;
     --color-muted-foreground: #A1A1AA;
-    /* Maintain brand colors but adjust if needed */
+    --color-border: #2C2C2C;
   }
 }
 
@@ -64,12 +92,49 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-serif);
-  font-weight: 500;
+/* Typography Utilities */
+@layer utilities {
+  .font-display {
+    font-family: var(--font-serif);
+    font-weight: 700;
+  }
+
+  /* Standard Heading Classes */
+  .display-heading {
+    @apply font-serif font-bold text-5xl md:text-7xl lg:text-8xl leading-tight text-white;
+  }
+
+  .section-heading {
+    @apply font-serif font-bold text-3xl md:text-5xl mb-6 text-primary;
+  }
+
+  .section-subheading {
+    @apply text-secondary uppercase tracking-widest text-sm font-medium block mb-4;
+  }
+
+  .card-heading {
+    @apply font-bold text-xl text-primary mb-2;
+  }
+
+  /* Layout Utilities */
+  .section-padding {
+    @apply py-20 md:py-24;
+  }
+
+  .container-width {
+    @apply container mx-auto px-6 max-w-7xl;
+  }
+
+  /* Component Base Styles */
+  .btn-primary {
+    @apply bg-primary text-white px-8 py-3 rounded-full font-medium tracking-wide hover:bg-primary/90 transition-all shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-primary px-8 py-3 rounded-full font-medium tracking-wide hover:bg-white hover:text-primary transition-all shadow-md hover:shadow-lg;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-border/50;
+  }
 }

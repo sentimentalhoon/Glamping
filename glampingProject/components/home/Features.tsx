@@ -14,8 +14,8 @@ const amenities = [
 
 export function Features() {
     return (
-        <section id="amenities" className="py-24 bg-accent/30">
-            <div className="container mx-auto px-6 text-center">
+        <section id="amenities" className="section-padding bg-accent/30">
+            <div className="container-width text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -23,8 +23,8 @@ export function Features() {
                     transition={{ duration: 0.6 }}
                     className="mb-16"
                 >
-                    <h2 className="text-4xl font-serif font-bold text-primary mb-4">특별한 어메니티</h2>
-                    <p className="text-foreground/70 max-w-2xl mx-auto break-keep">
+                    <h2 className="section-heading mb-4">특별한 어메니티</h2>
+                    <p className="text-foreground/70 max-w-2xl mx-auto break-keep text-lg">
                         고객님의 편안하고 잊지 못할 휴식을 위해 모든 디테일을 세심하게 준비했습니다.
                     </p>
                 </motion.div>
@@ -37,11 +37,11 @@ export function Features() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow group"
+                            className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group"
                         >
-                            <item.icon className="w-10 h-10 text-secondary mb-6 mx-auto group-hover:scale-110 transition-transform" />
-                            <h3 className="text-xl font-medium text-primary mb-3">{item.title}</h3>
-                            <p className="text-muted-foreground font-light break-keep">{item.description}</p>
+                            <item.icon className="w-10 h-10 text-primary mb-6 mx-auto group-hover:scale-110 transition-transform" />
+                            <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
+                            <p className="text-muted-foreground font-light break-keep leading-relaxed">{item.description}</p>
                         </motion.div>
                     ))}
                 </div>

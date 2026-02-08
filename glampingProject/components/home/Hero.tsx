@@ -21,13 +21,13 @@ export function Hero() {
             </div>
 
             {/* Content */}
-            <div className="relative h-full container mx-auto px-6 flex flex-col justify-center items-center text-center text-white z-10">
+            <div className="relative h-full container-width flex flex-col justify-center items-center text-center text-white z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <span className="text-sm md:text-base font-medium tracking-[0.3em] mb-4 block text-secondary">
+                    <span className="section-subheading text-secondary mb-4 block">
                         자연 속에서의 온전한 휴식
                     </span>
                 </motion.div>
@@ -36,7 +36,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 break-keep"
+                    className="display-heading mb-6 break-keep"
                 >
                     자연이 품은 <br /> 프리미엄 쉼터
                 </motion.h1>
@@ -45,7 +45,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="max-w-2xl text-lg md:text-xl text-gray-200 mb-10 font-light leading-relaxed break-keep"
+                    className="max-w-2xl text-lg md:text-xl text-white/90 mb-10 font-light leading-relaxed break-keep"
                 >
                     야생의 아름다움과 호텔의 편안함이 공존하는 곳.<br className="hidden md:block" />
                     별빛 아래 나만의 공간에서 특별한 추억을 만드세요.
@@ -56,7 +56,7 @@ export function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                    <button className="bg-secondary text-secondary-foreground px-8 py-4 rounded-full text-base font-medium tracking-wide hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
+                    <button className="btn-secondary text-lg px-10 py-4 transform hover:scale-105">
                         예약하기
                     </button>
                 </motion.div>
