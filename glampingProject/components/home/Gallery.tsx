@@ -13,7 +13,7 @@ const images = [
 export function Gallery() {
     return (
         <section id="gallery" className="py-24 bg-background">
-            <div className="container mx-auto px-6">
+            <div className="container-width">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

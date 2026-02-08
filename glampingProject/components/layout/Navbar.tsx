@@ -59,7 +59,7 @@ export function Navbar() {
                     : "bg-transparent py-6"
                 }`}
         >
-            <div className="container mx-auto px-6 flex items-center justify-between">
+            <div className="container-width flex items-center justify-between">
                 <Link
                     href="/"
                     className={`text-2xl font-serif font-bold tracking-wider transition-colors ${isScrolled || isMobileMenuOpen ? "text-primary" : "text-white"
