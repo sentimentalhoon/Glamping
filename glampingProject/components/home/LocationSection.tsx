@@ -48,7 +48,7 @@ export function LocationSection() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                         viewport={{ once: true }}
-                        className="w-full lg:w-2/3 h-[500px] rounded-sm overflow-hidden shadow-2xl border border-border/20 grayscale hover:grayscale-0 transition-all duration-700"
+                        className="w-full lg:w-2/3 h-[500px] rounded-sm overflow-hidden shadow-2xl border border-border/20 transition-all duration-700"
                     >
                         <NaverMap className="w-full h-full" />
                     </motion.div>
