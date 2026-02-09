@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // TODO: 환경변수에서 네이버 지도 API 키를 가져오도록 변경
 // 현재는 정적 데이터로 샘플 좌표를 사용
