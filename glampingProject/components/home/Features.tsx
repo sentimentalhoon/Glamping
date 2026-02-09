@@ -37,7 +37,7 @@ export function Features() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group"
+                            className="bg-surface p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group"
                         >
                             <item.icon className="w-10 h-10 text-primary mb-6 mx-auto group-hover:scale-110 transition-transform" />
                             <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>

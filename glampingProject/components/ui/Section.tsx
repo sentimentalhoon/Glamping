@@ -17,9 +17,9 @@ export function Section({
     const bgStyles = {
         default: "bg-background",
         white: "bg-surface",
-        muted: "bg-primary/5",
+        muted: "bg-muted",
         primary: "bg-primary text-primary-foreground",
-        image: "relative text-white", // For hero sections
+        image: "relative text-white", // For hero sections (forced white)
     };
 
     return (

@@ -14,6 +14,8 @@ const nanumMyeongjo = Nanum_Myeongjo({
   weight: ["400", "700", "800"],
 });
 
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
+
 export const metadata: Metadata = {
   title: "루미나 글램핑 | 자연 속의 프리미엄 쉼터",
   description: "야생의 아름다움과 호텔의 편안함이 공존하는 곳. 루미나 글램핑에서 특별한 추억을 만드세요.",
@@ -25,11 +27,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body
         className={`${notoSansKr.variable} ${nanumMyeongjo.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

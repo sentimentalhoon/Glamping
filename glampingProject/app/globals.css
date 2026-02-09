@@ -1,51 +1,64 @@
 @import "tailwindcss";
 
 :root {
-  /* Premium Nature Palette - Semantic Naming */
+  /* --- Light Mode Tokens --- */
   --color-primary: #1A2F23;
-  /* Deep Forest Green - Main Text, Headings */
   --color-primary-foreground: #F9F9F7;
-  /* Cream - Text on Primary */
-
+  
   --color-secondary: #D4AF37;
-  /* Gold - Accent, CTA */
   --color-secondary-foreground: #1A2F23;
-  /* Dark Green - Text on Secondary */
 
   --color-background: #F9F9F7;
-  /* Cream - Main Background */
-  --color-foreground: #2C2C2C;
-  /* Charcoal - Body Text */
+  --color-foreground: #1A1A1A;
 
   --color-surface: #FFFFFF;
-  /* White - Cards, Modals */
-  --color-surface-foreground: #2C2C2C;
+  --color-surface-foreground: #1A1A1A;
 
-  --color-muted: #E5E5E0;
-  /* Warm Gray - Borders, Dividers */
-  --color-muted-foreground: #6B7280;
-  /* Medium Gray - Secondary Text */
-  --color-border: #E5E5E0;
-
-
+  --color-muted: #F1F1EE;
+  --color-muted-foreground: #64748b;
+  
   --color-accent: #E8F5E9;
-  /* Light Green - Subtle Backgrounds */
   --color-accent-foreground: #1A2F23;
+
+  --color-border: #E2E2DC;
+  --color-input: #E2E2DC;
+  --color-ring: #1A2F23;
 
   /* Typography Scale */
   --text-display: 5rem;
-  /* 80px */
   --text-h1: 3.5rem;
-  /* 56px */
   --text-h2: 2.5rem;
-  /* 40px */
   --text-h3: 1.5rem;
-  /* 24px */
 
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
+}
+
+.dark {
+  /* --- Dark Mode Tokens --- */
+  --color-background: #0F110F;
+  --color-foreground: #F1F1EE;
+
+  --color-primary: #2D4F3B;
+  --color-primary-foreground: #F1F1EE;
+
+  --color-secondary: #E5C158;
+  --color-secondary-foreground: #0F110F;
+
+  --color-surface: #1A1D1A;
+  --color-surface-foreground: #F1F1EE;
+
+  --color-muted: #242824;
+  --color-muted-foreground: #94a3b8;
+
+  --color-accent: #1E2E24;
+  --color-accent-foreground: #A5D6A7;
+
+  --color-border: #242824;
+  --color-input: #242824;
+  --color-ring: #D4AF37;
 }
 
 @theme inline {
@@ -70,18 +83,6 @@
   --radius-md: var(--radius-md);
   --radius-lg: var(--radius-lg);
   --radius-xl: var(--radius-xl);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #121212;
-    --color-foreground: #F9F9F7;
-    --color-surface: #1E1E1E;
-    --color-surface-foreground: #F9F9F7;
-    --color-muted: #2C2C2C;
-    --color-muted-foreground: #A1A1AA;
-    --color-border: #2C2C2C;
-  }
 }
 
 body {

@@ -24,9 +24,9 @@ export function Button({
     
     const variants = {
         primary: "bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 shadow-md hover:shadow-lg",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-white hover:text-primary hover:scale-105 shadow-md hover:shadow-lg",
-        outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
-        ghost: "text-primary hover:bg-primary/5",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-background hover:text-primary hover:scale-105 shadow-md hover:shadow-lg",
+        outline: "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground",
+        ghost: "text-primary hover:bg-muted",
     };
 
     const sizes = {

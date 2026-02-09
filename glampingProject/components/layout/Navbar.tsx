@@ -5,6 +5,12 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import dynamic from "next/dynamic";
+
+const ThemeToggle = dynamic(
+    () => import("@/components/ui/ThemeToggle").then((mod) => mod.ThemeToggle),
+    { ssr: false }
+);
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -22,112 +28,122 @@ export function Navbar() {
 
     const navLinks = [
         {
-            name: "소개",
+            name: "The Estate",
             items: [
-                { name: "글램핑 소개", href: "/about" },
-                { name: "오시는 길", href: "/location" },
+                { name: "브랜드 철학", href: "/philosophy" },
+                { name: "로케이션", href: "/location" },
+                { name: "건축 미학", href: "/architecture" },
             ]
         },
         {
-            name: "객실",
+            name: "Collection",
             items: [
-                { name: "객실 안내", href: "/accommodations" },
-                { name: "요금 안내", href: "/pricing" },
+                { name: "더 글라스 돔", href: "/collection/glass-dome" },
+                { name: "더 포레스트 롯지", href: "/collection/forest-lodge" },
+                { name: "시그니처 어메니티", href: "/collection/amenities" },
             ]
         },
         {
-            name: "시설&관광",
+            name: "Ownership",
             items: [
-                { name: "부대시설", href: "/amenities" },
-                { name: "갤러리", href: "/gallery" },
-                { name: "주변 관광", href: "/nearby" },
+                { name: "멤버십 혜택", href: "/membership" },
+                { name: "투자 가치", href: "/investment" },
+                { name: "입회 상담", href: "/inquiry" },
             ]
         },
         {
-            name: "커뮤니티",
+            name: "Culture",
             items: [
-                { name: "FAQ", href: "/faq" },
-                { name: "후기", href: "/reviews" },
+                { name: "매거진", href: "/magazine" },
+                { name: "오너스 라운지", href: "/owners-lounge" },
             ]
         },
     ];
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen
-                    ? "bg-background/80 backdrop-blur-md shadow-sm py-4"
-                    : "bg-transparent py-6"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen
+                    ? "bg-background/90 backdrop-blur-xl shadow-sm py-4 border-b border-border/10"
+                    : "bg-gradient-to-b from-black/80 to-transparent py-8"
                 }`}
         >
             <div className="container-width flex items-center justify-between">
                 <Link
                     href="/"
-                    className={`text-2xl font-serif font-bold tracking-wider transition-colors ${isScrolled || isMobileMenuOpen ? "text-primary" : "text-white"
+                    className={`text-2xl font-serif font-bold tracking-[0.2em] uppercase transition-colors duration-500 ${isScrolled || isMobileMenuOpen ? "text-primary" : "text-white"
                         }`}
                 >
-                    루미나
+                    Lumina
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center space-x-8">
-                    {navLinks.map((group, index) => (
-                        <div
-                            key={group.name}
-                            className="relative group"
-                            onMouseEnter={() => setHoveredIndex(index)}
-                            onMouseLeave={() => setHoveredIndex(null)}
-                        >
-                            <button
-                                className={`flex items-center gap-1 transition-colors text-sm font-medium tracking-wide ${isScrolled
-                                        ? "text-foreground/80 hover:text-primary"
-                                        : "text-white/80 hover:text-white"
-                                    }`}
+                <div className="hidden md:flex items-center space-x-6">
+                    <div className="flex items-center space-x-10 mr-6">
+                        {navLinks.map((group, index) => (
+                            <div
+                                key={group.name}
+                                className="relative group"
+                                onMouseEnter={() => setHoveredIndex(index)}
+                                onMouseLeave={() => setHoveredIndex(null)}
                             >
-                                {group.name}
-                                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${hoveredIndex === index ? "rotate-180" : ""}`} />
-                            </button>
+                                <button
+                                    className={`flex items-center gap-1 transition-all duration-300 text-xs font-medium tracking-[0.15em] uppercase ${isScrolled
+                                            ? "text-foreground/70 hover:text-primary"
+                                            : "text-white/80 hover:text-white"
+                                        }`}
+                                >
+                                    {group.name}
+                                </button>
 
-                            <AnimatePresence>
-                                {hoveredIndex === index && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: 10 }}
-                                        transition={{ duration: 0.2 }}
-                                        className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-48"
-                                    >
-                                        <div className="bg-surface rounded-xl shadow-xl border border-border/50 overflow-hidden py-2">
-                                            {group.items.map((item) => (
-                                                <Link
-                                                    key={item.name}
-                                                    href={item.href}
-                                                    className="block px-4 py-2 text-sm text-foreground/80 hover:text-primary hover:bg-primary/5 transition-colors"
-                                                >
-                                                    {item.name}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </div>
-                    ))}
-                    <Button 
-                         href="/"
-                         variant={isScrolled ? "primary" : "secondary"}
-                         className={!isScrolled ? "bg-white text-primary hover:bg-white/90" : ""}
-                    >
-                        예약하기
-                    </Button>
+                                <AnimatePresence>
+                                    {hoveredIndex === index && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 15 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: 15 }}
+                                            transition={{ duration: 0.3, ease: "easeOut" }}
+                                            className="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-56"
+                                        >
+                                            <div className="bg-surface/95 backdrop-blur-md rounded-sm shadow-2xl border border-border/20 overflow-hidden py-3">
+                                                {group.items.map((item) => (
+                                                    <Link
+                                                        key={item.name}
+                                                        href={item.href}
+                                                        className="block px-6 py-3 text-sm text-foreground/70 hover:text-primary hover:bg-primary/5 transition-colors font-serif"
+                                                    >
+                                                        {item.name}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+                        ))}
+                    </div>
+                    
+                    <div className="flex items-center space-x-4 border-l border-white/20 pl-8 ml-2">
+                        <ThemeToggle />
+                        <Button 
+                            href="/inquiry"
+                            variant={isScrolled ? "primary" : "outline"}
+                            className={`${!isScrolled ? "border-white/40 text-white hover:bg-white hover:text-primary" : ""} px-6 text-xs uppercase tracking-widest`}
+                        >
+                            Private Tour
+                        </Button>
+                    </div>
                 </div>
 
-                {/* Mobile Toggle */}
-                <button
-                    className={`md:hidden ${isScrolled || isMobileMenuOpen ? "text-foreground" : "text-white"}`}
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                    {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
+                {/* Mobile Icons */}
+                <div className="flex items-center space-x-4 md:hidden">
+                    <ThemeToggle />
+                    <button
+                        className={`${isScrolled || isMobileMenuOpen ? "text-foreground" : "text-white"}`}
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    >
+                        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu */}
@@ -139,15 +155,15 @@ export function Navbar() {
                         exit={{ opacity: 0, height: 0 }}
                         className="md:hidden bg-background border-t border-border overflow-hidden shadow-xl"
                     >
-                        <div className="flex flex-col p-6 space-y-2">
+                        <div className="flex flex-col p-6 space-y-4">
                             {navLinks.map((group, index) => (
-                                <div key={group.name} className="border-b border-border/50 last:border-0 pb-2 last:pb-0">
+                                <div key={group.name} className="border-b border-border/30 last:border-0 pb-4 last:pb-0">
                                     <button
                                         onClick={() => setMobileExpandedIndex(mobileExpandedIndex === index ? null : index)}
-                                        className="flex items-center justify-between w-full py-3 text-lg font-medium text-foreground/80"
+                                        className="flex items-center justify-between w-full py-2 text-sm font-medium text-foreground/60 uppercase tracking-widest"
                                     >
                                         {group.name}
-                                        <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${mobileExpandedIndex === index ? "rotate-180" : ""}`} />
+                                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileExpandedIndex === index ? "rotate-180" : ""}`} />
                                     </button>
                                     <AnimatePresence>
                                         {mobileExpandedIndex === index && (
@@ -174,9 +190,9 @@ export function Navbar() {
                                     </AnimatePresence>
                                 </div>
                             ))}
-                            <div className="pt-4">
-                                <Button href="/" className="w-full">
-                                    예약하기
+                            <div className="pt-6">
+                                <Button href="/inquiry" className="w-full text-sm uppercase tracking-widest py-4">
+                                    Private Tour 신청
                                 </Button>
                             </div>
                         </div>
