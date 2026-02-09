@@ -1,11 +1,51 @@
 "use client";
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 
 export function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
+    const [isLowPowerMode, setIsLowPowerMode] = useState(false);
+    
+    // Check for low power/performance environment
+    useEffect(() => {
+        const checkEnvironment = async () => {
+            // 1. Hardware Concurrency (CPU Cores)
+            const isLowConcurrency = window.navigator.hardwareConcurrency && window.navigator.hardwareConcurrency <= 4;
+            
+            // 2. Data Saver / Network Info
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
+            const isDataSaver = connection?.saveData;
+
+            // 3. User Preference (Reduced Motion)
+            const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // 4. Battery Status (Experimental)
+            let isLowBattery = false;
+            try {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                if ((navigator as any).getBattery) {
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    const battery = await (navigator as any).getBattery();
+                    if (battery.level < 0.2 && !battery.charging) isLowBattery = true;
+                }
+            } catch (e) {
+                // Ignore battery API errors or lack of support
+                console.debug("Battery API not supported", e);
+            }
+
+            if (isLowConcurrency || isDataSaver || isReducedMotion || isLowBattery) {
+                console.log("Low Power/Performance Mode Detected. Switching to static image.");
+                setIsLowPowerMode(true);
+            }
+        };
+
+        checkEnvironment();
+    }, []);
+
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end start"]
@@ -64,15 +104,27 @@ export function Hero() {
                 className="absolute inset-0 pointer-events-none transform-gpu"
             >
                 <div className="absolute inset-0 w-full h-full">
-                    <video
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="w-full h-full object-cover opacity-60"
-                    >
-                        <source src="/videos/campfire.mp4" type="video/mp4" />
-                    </video>
+                    {isLowPowerMode ? (
+                        <Image
+                            src="/hero.png"
+                            alt="Glamping Atmosphere"
+                            fill
+                            className="object-cover opacity-60"
+                            priority
+                            placeholder="blur"
+                            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
+                        />
+                    ) : (
+                        <video
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            className="w-full h-full object-cover opacity-60"
+                        >
+                            <source src="/videos/campfire.mp4" type="video/mp4" />
+                        </video>
+                    )}
                 </div>
             </motion.div>
             
