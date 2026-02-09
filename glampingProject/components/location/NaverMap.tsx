@@ -21,7 +21,7 @@ interface NaverMapProps {
 export function NaverMap({ className = "" }: NaverMapProps) {
     const mapRef = useRef<HTMLDivElement>(null);
     const mapInstanceRef = useRef<naver.maps.Map | null>(null);
-    const [is3D, setIs3D] = useState(false);
+    const [is3D, setIs3D] = useState(true);
 
     useEffect(() => {
         // 네이버 지도 스크립트 로드
@@ -50,13 +50,13 @@ export function NaverMap({ className = "" }: NaverMapProps) {
 
         const mapOptions: naver.maps.MapOptions = {
             center: location,
-            zoom: 16,
+            zoom: 17,
             zoomControl: false,
             mapTypeControl: false,
             scaleControl: false,
             logoControl: false,
             mapDataControl: false,
-            mapTypeId: naver.maps.MapTypeId.NORMAL,
+            mapTypeId: naver.maps.MapTypeId.HYBRID,
         };
 
         const map = new naver.maps.Map(mapRef.current, mapOptions);
