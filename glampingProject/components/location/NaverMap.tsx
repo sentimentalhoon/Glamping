@@ -27,7 +27,7 @@ export function NaverMap({ className = "" }: NaverMapProps) {
         // 네이버 지도 스크립트 로드
         if (!window.naver) {
             const script = document.createElement("script");
-            script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${NAVER_MAP_CLIENT_ID}&submodules=panorama`;
+            script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${NAVER_MAP_CLIENT_ID}&submodules=panorama`;
             script.async = true;
             script.onload = initMap;
             document.head.appendChild(script);
@@ -76,26 +76,20 @@ export function NaverMap({ className = "" }: NaverMapProps) {
         const map = mapInstanceRef.current;
 
         if (!is3D) {
-            // 3D Mode On
-            map.morph({
-                pitch: 60, // 기울기
-                bearing: 45, // 회전
-                zoom: 17
-            }, { duration: 1000, easing: "easeOutCubic" });
+            // Switch to Satellite (Hybrid) View for "3D-like" experience
+            map.setMapTypeId(naver.maps.MapTypeId.HYBRID);
         } else {
-            // 2D Mode On
-            map.morph({
-                pitch: 0,
-                bearing: 0,
-                zoom: 16
-            }, { duration: 1000, easing: "easeOutCubic" });
+            // Switch back to Normal View
+            map.setMapTypeId(naver.maps.MapTypeId.NORMAL);
         }
         setIs3D(!is3D);
     };
 
     const toggleRoadView = () => {
         // 네이버 지도 로드뷰 새 창 연결
-        const url = `https://map.naver.com/v5/?c=${GLAMPING_LOCATION.lng},${GLAMPING_LOCATION.lat},17,0,0,0,dh`;
+        // 줌 레벨과 좌표를 포함하여 정확한 위치로 이동
+        const center = mapInstanceRef.current?.getCenter() || new naver.maps.LatLng(GLAMPING_LOCATION.lat, GLAMPING_LOCATION.lng);
+        const url = `https://map.naver.com/v5/?c=${center.lng()},${center.lat()},17,0,0,0,dh`;
         window.open(url, '_blank');
     };
 
@@ -108,14 +102,14 @@ export function NaverMap({ className = "" }: NaverMapProps) {
                 <button 
                     onClick={toggle3D}
                     className={`bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg transition-all hover:scale-110 active:scale-95 ${is3D ? 'text-secondary ring-2 ring-secondary' : 'text-primary'}`}
-                    title="3D View"
+                    title="Satellite View"
                 >
                     {is3D ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> // Moon/Night icon for Hybrid
                     ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> // Layers icon
                     )}
-                    <span className="sr-only">3D View</span>
+                    <span className="sr-only">Satellite View</span>
                 </button>
                 
                 <button 
