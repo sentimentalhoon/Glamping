@@ -28,7 +28,7 @@ const benefits = [
 
 export function OwnershipBenefits() {
     return (
-        <section className="section-padding bg-[#1A2F23] text-white relative overflow-hidden">
+        <section id="ownership" className="section-padding bg-[#1A2F23] text-white relative overflow-hidden">
              {/* Decorative Background */}
              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
 

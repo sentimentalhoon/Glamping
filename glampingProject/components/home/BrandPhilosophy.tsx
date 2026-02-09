@@ -15,7 +15,7 @@ export function BrandPhilosophy() {
     const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
     return (
-        <section ref={containerRef} className="relative py-32 md:py-48 bg-background overflow-hidden">
+        <section id="philosophy" ref={containerRef} className="relative py-32 md:py-48 bg-background overflow-hidden">
              {/* Background Element - Subtle Parallax */}
              <motion.div 
                 style={{ y }}

@@ -30,32 +30,32 @@ export function Navbar() {
         {
             name: "The Estate",
             items: [
-                { name: "브랜드 철학", href: "/philosophy" },
-                { name: "로케이션", href: "/location" },
-                { name: "건축 미학", href: "/architecture" },
+                { name: "브랜드 철학", href: "/#philosophy" },
+                { name: "로케이션", href: "/#location" },
+                { name: "건축 미학", href: "/#collection" },
             ]
         },
         {
             name: "Collection",
             items: [
-                { name: "더 글라스 돔", href: "/collection/glass-dome" },
-                { name: "더 포레스트 롯지", href: "/collection/forest-lodge" },
-                { name: "시그니처 어메니티", href: "/collection/amenities" },
+                { name: "더 글라스 돔", href: "/#collection" },
+                { name: "더 포레스트 롯지", href: "/#collection" },
+                { name: "시그니처 어메니티", href: "/#collection" },
             ]
         },
         {
             name: "Ownership",
             items: [
-                { name: "멤버십 혜택", href: "/membership" },
-                { name: "투자 가치", href: "/investment" },
-                { name: "입회 상담", href: "/inquiry" },
+                { name: "멤버십 혜택", href: "/#ownership" },
+                { name: "투자 가치", href: "/#ownership" },
+                { name: "입회 상담", href: "/#inquiry" },
             ]
         },
         {
             name: "Culture",
             items: [
-                { name: "매거진", href: "/magazine" },
-                { name: "오너스 라운지", href: "/owners-lounge" },
+                { name: "매거진", href: "/#inquiry" },
+                { name: "오너스 라운지", href: "/#inquiry" },
             ]
         },
     ];
@@ -125,7 +125,7 @@ export function Navbar() {
                     <div className="flex items-center space-x-4 border-l border-white/20 pl-8 ml-2">
                         <ThemeToggle />
                         <Button 
-                            href="/inquiry"
+                            href="/#inquiry"
                             variant={isScrolled ? "primary" : "outline"}
                             className={`${!isScrolled ? "border-white/40 text-white hover:bg-white hover:text-primary" : ""} px-6 text-xs uppercase tracking-widest`}
                         >
@@ -191,7 +191,7 @@ export function Navbar() {
                                 </div>
                             ))}
                             <div className="pt-6">
-                                <Button href="/inquiry" className="w-full text-sm uppercase tracking-widest py-4">
+                                <Button href="/#inquiry" className="w-full text-sm uppercase tracking-widest py-4">
                                     Private Tour 신청
                                 </Button>
                             </div>

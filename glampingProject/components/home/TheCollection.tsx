@@ -25,7 +25,7 @@ const collections = [
 
 export function TheCollection() {
     return (
-        <section className="section-padding bg-muted/30 overflow-hidden">
+        <section id="collection" className="section-padding bg-muted/30 overflow-hidden">
             <div className="container-width">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
