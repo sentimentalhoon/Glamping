@@ -7,9 +7,10 @@ import { useEffect, useRef, useState } from "react";
 const NAVER_MAP_CLIENT_ID = process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID || "";
 
 // TODO: 실제 글램핑장 좌표로 변경 (DB에서 가져오거나 환경변수로 설정)
+// 35.656426, 126.501408
 const GLAMPING_LOCATION = {
-    lat: 35.6536, // 부안 고사포 해수욕장 인근
-    lng: 126.5442, 
+    lat: 35.656426, // 부안 고사포 해수욕장 인근
+    lng: 126.501408, 
     name: "루미나 프라이빗 에스테이트",
     address: "전북 부안군 변산면 노루목길 8-8",
 };
