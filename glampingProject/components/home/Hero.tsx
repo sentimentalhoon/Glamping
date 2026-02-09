@@ -1,25 +1,67 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
+import { useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
 export function Hero() {
-    const containerRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end start"]
     });
 
+    // Scroll Parallax
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
+    // Mouse Parallax (3D Tilt)
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    // Smooth springs for fluid movement
+    const springConfig = { damping: 25, stiffness: 100, mass: 0.5 };
+    const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [5, -5]), springConfig); // Up/Down tilt
+    const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-5, 5]), springConfig); // Left/Right tilt
+    
+    // Background moves slightly opposite/different to create depth
+    const bgRotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [2, -2]), springConfig); 
+    const bgRotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-2, 2]), springConfig);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+        if (!containerRef.current) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        
+        // Calculate normalized position (-0.5 to 0.5) from center
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        
+        mouseX.set(x);
+        mouseY.set(y);
+    };
+
+    const handleMouseLeave = () => {
+        mouseX.set(0);
+        mouseY.set(0);
+    };
+
     return (
-        <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-[#1A2F23]">
-            {/* 1. Cinematic Video Background with Parallax */}
+        <section 
+            ref={containerRef} 
+            className="relative h-screen w-full overflow-hidden bg-[#1A2F23] perspective-1000"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ perspective: "1200px" }} // CSS variable for perspective
+        >
+            {/* 1. Cinematic Video Background with Parallax & 3D Tilt */}
             <motion.div 
-                style={{ y }}
-                className="absolute inset-0 pointer-events-none"
+                style={{ 
+                    y,
+                    rotateX: bgRotateX,
+                    rotateY: bgRotateY,
+                    scale: 1.1 // Checked to ensure no edges visible during tilt
+                }}
+                className="absolute inset-0 pointer-events-none transform-gpu"
             >
                 <div className="absolute inset-0 w-full h-full">
                     <video
@@ -27,17 +69,16 @@ export function Hero() {
                         muted
                         loop
                         playsInline
-                        className="w-full h-full object-cover opacity-60 scale-105"
+                        className="w-full h-full object-cover opacity-60"
                     >
                         <source src="/videos/campfire.mp4" type="video/mp4" />
                     </video>
                 </div>
             </motion.div>
             
-            {/* 2. Atmosphere Layers */}
-            {/* Deep darkening for text readability and mood */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#1A2F23]/40 via-transparent to-[#1A2F23]/90" />
-            <div className="absolute inset-0 bg-black/30" />
+            {/* 2. Atmosphere Layers (Static or minimal movement) */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1A2F23]/40 via-transparent to-[#1A2F23]/90 pointer-events-none" />
+            <div className="absolute inset-0 bg-black/30 pointer-events-none" />
 
             {/* Mist Animation */}
             <motion.div 
@@ -49,14 +90,20 @@ export function Hero() {
                 <div className="absolute top-1/2 left-0 w-[150%] h-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-3xl rotate-6" />
             </motion.div>
 
-            {/* 3. The Narrative Content */}
-            <div className="relative h-full container-width flex flex-col justify-center items-center text-center text-white z-10 px-4">
+            {/* 3. The Narrative Content with Stronger 3D Tilt */}
+            <div className="relative h-full container-width flex flex-col justify-center items-center text-center text-white z-10 px-4 preserve-3d">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, ease: "easeOut" }}
+                    style={{ 
+                        rotateX, 
+                        rotateY,
+                        z: 50 // Push text forward
+                    }}
+                    className="transform-gpu"
                 >
-                    <span className="section-subheading text-secondary mb-6 tracking-[0.2em] uppercase text-sm md:text-base">
+                    <span className="section-subheading text-secondary mb-6 tracking-[0.2em] uppercase text-sm md:text-base block">
                         The Private Estate
                     </span>
                     <h1 className="display-heading mb-8 break-keep drop-shadow-lg text-white">
@@ -68,7 +115,7 @@ export function Hero() {
                         당신만의 숲 속 별장에서 시간이 멈추는 경험을 선사합니다.
                     </p>
                     
-                    <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+                    <div className="flex flex-col md:flex-row gap-4 justify-center items-center transform-gpu translate-z-20">
                         <button className="btn-secondary min-w-[200px] text-lg py-4 px-8 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] transition-all duration-500">
                             프라이빗 투어 신청
                         </button>
@@ -82,7 +129,7 @@ export function Hero() {
             {/* Scroll Indicator */}
             <motion.div 
                 style={{ opacity }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer"
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer pointer-events-auto"
                 onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
             >
                  <span className="text-[10px] uppercase tracking-[0.3em] text-white/50">Explore</span>
