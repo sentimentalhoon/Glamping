@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
@@ -17,6 +17,7 @@ export function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [mobileExpandedIndex, setMobileExpandedIndex] = useState<number | null>(null);
+    const navRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,6 +26,23 @@ export function Navbar() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    // Close mobile menu when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (isMobileMenuOpen && navRef.current && !navRef.current.contains(event.target as Node)) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+
+        if (isMobileMenuOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isMobileMenuOpen]);
 
     const navLinks = [
         {
@@ -62,6 +80,7 @@ export function Navbar() {
 
     return (
         <nav
+            ref={navRef}
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen
                     ? "bg-background/90 backdrop-blur-xl shadow-sm py-4 border-b border-border/10"
                     : "bg-gradient-to-b from-black/80 to-transparent py-8"
