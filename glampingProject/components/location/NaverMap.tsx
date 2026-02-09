@@ -88,8 +88,13 @@ export function NaverMap({ className = "" }: NaverMapProps) {
     const toggleRoadView = () => {
         // 네이버 지도 로드뷰 새 창 연결
         // 줌 레벨과 좌표를 포함하여 정확한 위치로 이동
-        const center = mapInstanceRef.current?.getCenter() || new naver.maps.LatLng(GLAMPING_LOCATION.lat, GLAMPING_LOCATION.lng);
-        const url = `https://map.naver.com/v5/?c=${center.lng()},${center.lat()},17,0,0,0,dh`;
+        const center = mapInstanceRef.current?.getCenter();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const lat = center ? (center as any)._lat || (center as any).lat() : GLAMPING_LOCATION.lat;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const lng = center ? (center as any)._lng || (center as any).lng() : GLAMPING_LOCATION.lng;
+        
+        const url = `https://map.naver.com/v5/?c=${lng},${lat},17,0,0,0,dh`;
         window.open(url, '_blank');
     };
 
