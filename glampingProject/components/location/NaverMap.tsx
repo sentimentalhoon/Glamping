@@ -25,7 +25,7 @@ export function NaverMap({ className = "" }: NaverMapProps) {
     useEffect(() => {
         // 네이버 지도 스크립트 로드
         const script = document.createElement("script");
-        script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${NAVER_MAP_CLIENT_ID}`;
+        script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${NAVER_MAP_CLIENT_ID}`;
         script.async = true;
         script.onload = initMap;
         document.head.appendChild(script);
