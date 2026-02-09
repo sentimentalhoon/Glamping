@@ -37,7 +37,7 @@ export function Footer() {
                         <ul className="space-y-4">
                             <li className="flex items-start space-x-3 text-primary-foreground/70">
                                 <MapPin size={20} className="shrink-0 mt-1" />
-                                <span>강원도 춘천시 남산면 숲길 123</span>
+                                <span>전북 부안군 변산면 노루목길 8-8</span>
                             </li>
                             <li className="flex items-center space-x-3 text-primary-foreground/70">
                                 <Phone size={20} className="shrink-0" />

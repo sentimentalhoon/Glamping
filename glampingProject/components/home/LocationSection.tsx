@@ -27,13 +27,13 @@ export function LocationSection() {
                         <div className="w-16 h-[1px] bg-secondary/50 mb-8"></div>
                         <div className="space-y-6 text-foreground/70 font-light leading-relaxed">
                             <p>
-                                서울에서 불과 50분.<br />
-                                북한강의 물안개가 피어오르는 청평의 깊은 숲 속에 
-                                루미나 프라이빗 에스테이트가 자리하고 있습니다.
+                                변산반도의 붉은 노을이 머무는 곳.<br />
+                                고사포 해변의 솔숲과 서해의 파도 소리가 어우러진 
+                                루미나 프라이빗 에스테이트가 당신을 기다립니다.
                             </p>
                             <p>
                                 <strong>Address</strong><br />
-                                경기도 가평군 청평면 호반로 000-00
+                                전북 부안군 변산면 노루목길 8-8
                             </p>
                             <p>
                                 <strong>Contact</strong><br />
