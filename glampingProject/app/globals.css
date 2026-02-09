@@ -102,7 +102,7 @@ body {
 
   /* Standard Heading Classes */
   .display-heading {
-    @apply font-serif font-bold text-5xl md:text-7xl lg:text-8xl leading-tight text-white;
+    @apply font-serif font-bold text-5xl md:text-7xl lg:text-8xl leading-tight;
   }
 
   .section-heading {

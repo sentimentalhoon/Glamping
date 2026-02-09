@@ -59,7 +59,7 @@ export function Hero() {
                     <span className="section-subheading text-secondary mb-6 tracking-[0.2em] uppercase text-sm md:text-base">
                         The Private Estate
                     </span>
-                    <h1 className="display-heading mb-8 break-keep drop-shadow-lg">
+                    <h1 className="display-heading mb-8 break-keep drop-shadow-lg text-white">
                         자연이 허락한<br />
                         <span className="text-white/90">유일한 안식처</span>
                     </h1>

@@ -42,7 +42,7 @@ export function OwnershipBenefits() {
                         className="lg:w-1/3 sticky top-32"
                     >
                         <span className="section-subheading text-secondary mb-4">Ownership Privilege</span>
-                        <h2 className="display-heading mb-8">
+                        <h2 className="display-heading mb-8 text-white">
                             선택된 소수만의<br />
                             <span className="text-white/70">특권</span>
                         </h2>

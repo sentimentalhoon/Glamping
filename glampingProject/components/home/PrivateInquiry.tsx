@@ -15,7 +15,7 @@ export function PrivateInquiry() {
                     className="text-center mb-16"
                 >
                     <span className="section-subheading text-secondary">Private Invitation</span>
-                    <h2 className="display-heading text-background-foreground mb-6 text-4xl">
+                    <h2 className="display-heading text-foreground mb-6 text-4xl">
                         프라이빗 투어 신청
                     </h2>
                     <p className="text-muted-foreground text-lg font-light leading-relaxed">

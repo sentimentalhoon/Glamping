@@ -35,7 +35,7 @@ export function TheCollection() {
                     className="text-center mb-20"
                 >
                     <span className="section-subheading text-secondary">The Collection</span>
-                    <h2 className="display-heading text-background-foreground mb-6">Architectural Masterpieces</h2>
+                    <h2 className="display-heading text-foreground mb-6">Architectural Masterpieces</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto text-lg font-light leading-relaxed">
                         자연을 거스르지 않고 스며드는 건축.<br />
                         루미나의 컬렉션은 공간 그 자체로 예술이 됩니다.
