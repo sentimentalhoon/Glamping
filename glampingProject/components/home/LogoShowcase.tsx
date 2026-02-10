@@ -203,7 +203,7 @@ export function LogoShowcase() {
                     <div className="flex flex-col items-center">
                         <div className=" text-orange-500 mb-2">
                              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2C10 5 8 7 8 10C8 12.2 9.8 14 12 14C14.2 14 16 12.2 16 10C16 7 14 5 12 2MZ" />
+                                <path d="M12 2C10 5 8 7 8 10C8 12.2 9.8 14 12 14C14.2 14 16 12.2 16 10C16 7 14 5 12 2 Z" />
                                 <path d="M12 22C17.5 22 22 17.5 22 12C22 11 21.9 10 21.7 9C21.7 9 20 11 18 11C16.5 11 15 10 14 9C14 12 12 14 9 14C7 14 6 13 6 12C6 15 8 18 12 18V22Z" fillOpacity="0.5"/>
                              </svg>
                         </div>
