@@ -47,7 +47,7 @@ export function OwnershipBenefits() {
                             <span className="text-white/70">특권</span>
                         </h2>
                         <p className="text-white/60 font-light leading-relaxed mb-10 text-lg">
-                            루미나 멤버십은 단순한 이용권이 아닙니다.<br />
+                            더 웨스턴 멤버십은 단순한 이용권이 아닙니다.<br />
                             당신의 품격에 걸맞은 하이엔드 라이프스타일 제안입니다.
                         </p>
                         <button className="px-8 py-4 border border-secondary text-secondary hover:bg-secondary hover:text-[#1A2F23] transition-all duration-300 uppercase tracking-widest text-sm font-medium">

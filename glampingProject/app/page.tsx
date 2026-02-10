@@ -7,6 +7,7 @@ import { TheCollection } from "@/components/home/TheCollection";
 import { OwnershipBenefits } from "@/components/home/OwnershipBenefits";
 import { Gallery } from "@/components/home/Gallery";
 import { PrivateInquiry } from "@/components/home/PrivateInquiry";
+import { LogoShowcase } from "@/components/home/LogoShowcase"; // [NEW]
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <OwnershipBenefits />
       <Gallery />
       <PrivateInquiry />
+      <LogoShowcase /> {/* [NEW] */}
       <Footer />
     </main>
   );

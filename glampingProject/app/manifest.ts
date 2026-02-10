@@ -2,8 +2,8 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: '루미나 프라이빗 에스테이트',
-    short_name: 'Lumina',
+    name: '더 웨스턴 글램핑',
+    short_name: 'The Western',
     description: '변산반도 프리미엄 럭셔리 글램핑',
     start_url: '/',
     display: 'standalone',

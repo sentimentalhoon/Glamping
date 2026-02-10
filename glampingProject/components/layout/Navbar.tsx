@@ -92,7 +92,7 @@ export function Navbar() {
                     className={`text-2xl font-serif font-bold tracking-[0.2em] uppercase transition-colors duration-500 ${isScrolled || isMobileMenuOpen ? "text-primary" : "text-white"
                         }`}
                 >
-                    Lumina
+                    The Western
                 </Link>
 
                 {/* Desktop Nav */}

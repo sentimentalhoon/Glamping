@@ -15,12 +15,12 @@ export function PrivateInquiry() {
                     className="text-center mb-16"
                 >
                     <span className="section-subheading text-secondary">Private Invitation</span>
-                    <h2 className="display-heading text-foreground mb-6 text-4xl">
-                        프라이빗 투어 신청
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6">
+                        Private Tour & Inquiry
                     </h2>
-                    <p className="text-muted-foreground text-lg font-light leading-relaxed">
-                        루미나 글램핑은 100% 사전 예약제 프라이빗 투어로만 공개됩니다.<br />
-                        귀하의 여정에 맞추어 전담 컨시어지가 안내해 드립니다.
+                    <p className="text-white/70 mb-8 leading-relaxed">
+                        더 웨스턴 글램핑은 100% 예약제로 운영되며, 프라이빗 투어를 통해 미리 경험해보실 수 있습니다.<br />
+                        특별한 날, 소중한 사람과의 완벽한 휴식을 위해 언제든 문의해주세요.
                     </p>
                 </motion.div>
 

@@ -11,7 +11,7 @@ const NAVER_MAP_CLIENT_ID = process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID || "";
 const GLAMPING_LOCATION = {
     lat: 35.656426, // 부안 고사포 해수욕장 인근
     lng: 126.501408, 
-    name: "루미나 프라이빗 에스테이트",
+    name: "더 웨스턴 글램핑",
     address: "전북 부안군 변산면 노루목길 8-8",
 };
 

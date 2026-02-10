@@ -73,10 +73,10 @@ export default function AboutPage() {
                         About Us
                     </span>
                     <h1 className="display-heading text-4xl md:text-7xl">
-                        루미나 글램핑
+                        더 웨스턴 글램핑
                     </h1>
                     <p className="text-xl text-white/80 font-light mt-4">
-                        빛나는 추억을 만드는 곳
+                        자연이 빚어낸 가장 완벽한 휴식
                     </p>
                 </div>
             </section>

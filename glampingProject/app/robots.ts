@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/admin/', '/private/'],
     },
-    sitemap: 'https://lumina-glamping.com/sitemap.xml',
+    sitemap: 'https://the-western-glamping.com/sitemap.xml',
   }
 }

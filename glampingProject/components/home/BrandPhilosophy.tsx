@@ -71,21 +71,15 @@ export function BrandPhilosophy() {
                                 viewport={{ once: true }}
                                 className="text-lg md:text-xl text-foreground/70 font-light leading-relaxed break-keep font-serif"
                             >
-                                루미나는 단순한 숙박 시설이 아닙니다. 자연과 사람이 가장 완벽한 거리에서 마주할 수 있도록 설계된 건축의 미학입니다.
-                                바람의 소리가 음악이 되고, 달빛이 조명이 되는 곳.
-                            </motion.p>
-                            <motion.p 
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1, delay: 0.4 }}
-                                viewport={{ once: true }}
-                                className="text-lg md:text-xl text-foreground/70 font-light leading-relaxed break-keep font-serif"
-                            >
-                                도시의 소음 대신 숲의 침묵을 선물합니다.
-                                오직 12분만을 위해 준비된 루미나 프라이빗 에스테이트에서
-                                당신의 삶이 다시 숨 쉬는 순간을 경험하십시오.
-                            </motion.p>
-                        </div>
+                            <div className="w-16 h-0.5 bg-primary/30 my-8" />
+                            <p className="text-lg text-foreground/80 leading-relaxed font-serif">
+                                "진정한 럭셔리란 자연과 하나되는 순간에 있습니다."
+                            </p>
+                            <p className="text-foreground/70 leading-relaxed">
+                                더 웨스턴 글램핑은 변산반도의 때 묻지 않은 숲과 바다 사이에 자리 잡고 있습니다. 
+                                우리는 단순히 머무는 곳이 아닌, 자연의 감각을 온전히 깨우는 경험을 제안합니다.
+                            </p>
+                        </motion.div>
 
                         <motion.div
                              initial={{ opacity: 0, y: 20 }}
