@@ -12,7 +12,6 @@ export function BrandPhilosophy() {
     });
 
     const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
     return (
         <section id="philosophy" ref={containerRef} className="relative py-32 md:py-48 bg-background overflow-hidden">
@@ -22,7 +21,7 @@ export function BrandPhilosophy() {
                 className="absolute top-0 right-0 w-2/3 h-full opacity-5 pointer-events-none"
             >
                 <Image
-                    src="/interior.png" // Using existing asset effectively
+                    src="/interior.png"
                     alt="Background Ambience"
                     fill
                     className="object-cover grayscale"
@@ -40,7 +39,7 @@ export function BrandPhilosophy() {
                     >
                          <Image
                             src="/interior.png"
-                            alt="Lumina Interior Philosophy"
+                            alt="The Western Interior Philosophy"
                             fill
                             className="object-cover hover:scale-110 transition-transform duration-[3s]"
                         />
@@ -64,35 +63,36 @@ export function BrandPhilosophy() {
                         </motion.div>
 
                         <div className="space-y-8">
-                             <motion.p 
+                             <motion.div 
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.2 }}
                                 viewport={{ once: true }}
                                 className="text-lg md:text-xl text-foreground/70 font-light leading-relaxed break-keep font-serif"
                             >
-                            <div className="w-16 h-0.5 bg-primary/30 my-8" />
-                            <p className="text-lg text-foreground/80 leading-relaxed font-serif">
-                                "진정한 럭셔리란 자연과 하나되는 순간에 있습니다."
-                            </p>
-                            <p className="text-foreground/70 leading-relaxed">
-                                더 웨스턴 글램핑은 변산반도의 때 묻지 않은 숲과 바다 사이에 자리 잡고 있습니다. 
-                                우리는 단순히 머무는 곳이 아닌, 자연의 감각을 온전히 깨우는 경험을 제안합니다.
-                            </p>
-                        </motion.div>
+                                <div className="w-16 h-0.5 bg-primary/30 my-8" />
+                                <p className="text-lg text-foreground/80 leading-relaxed font-serif">
+                                    "진정한 럭셔리란 자연과 하나되는 순간에 있습니다."
+                                </p>
+                                <p className="text-foreground/70 leading-relaxed">
+                                    더 웨스턴 글램핑은 변산반도의 때 묻지 않은 숲과 바다 사이에 자리 잡고 있습니다. 
+                                    우리는 단순히 머무는 곳이 아닌, 자연의 감각을 온전히 깨우는 경험을 제안합니다.
+                                </p>
+                            </motion.div>
 
-                        <motion.div
-                             initial={{ opacity: 0, y: 20 }}
-                             whileInView={{ opacity: 1, y: 0 }}
-                             transition={{ duration: 1, delay: 0.6 }}
-                             viewport={{ once: true }}
-                             className="pt-8"
-                        >
-                            <div className="flex items-center gap-4">
-                                <div className="h-[1px] w-12 bg-foreground/20"></div>
-                                <span className="font-serif italic text-foreground/60">Lumina Creative Director</span>
-                            </div>
-                        </motion.div>
+                            <motion.div
+                                 initial={{ opacity: 0, y: 20 }}
+                                 whileInView={{ opacity: 1, y: 0 }}
+                                 transition={{ duration: 1, delay: 0.6 }}
+                                 viewport={{ once: true }}
+                                 className="pt-8"
+                            >
+                                <div className="flex items-center gap-4">
+                                    <div className="h-[1px] w-12 bg-foreground/20"></div>
+                                    <span className="font-serif italic text-foreground/60">The Western Creative Director</span>
+                                </div>
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>
