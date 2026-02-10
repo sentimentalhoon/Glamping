@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         url: "/hero.png", // Fallback image used as OG image
         width: 1200,
         height: 630,
-        alt: "Lumina Glamping Hero Image",
+        alt: "The Western Glamping Hero Image",
       },
     ],
     locale: "ko_KR",
@@ -110,7 +110,7 @@ const jsonLd = {
   "description": "변산반도 국립공원 내 위치한 프리미엄 럭셔리 글램핑 리조트. 프라이빗 비치와 숲속 독채 객실 제공.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "전북 부안군 변산면 노루목길 8-8",
+            "streetAddress": "전북 부안군 변산면 노루목길 8-8",
     "addressLocality": "부안군",
     "addressRegion": "전라북도",
     "postalCode": "56349",

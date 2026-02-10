@@ -58,7 +58,7 @@ export function HeroUltimate() {
                     <h1 className="display-heading mb-6">최고의 몰입형 경험</h1>
                     <p className="max-w-2xl text-lg text-white/90 mb-10 font-light leading-relaxed">
                         켄 번즈, 패럴랙스, 그라데이션, 그리고 안개 효과까지.<br />
-                        모든 요소가 조화롭게 어우러진 루미나 글램핑만의 시그니처 연출입니다.
+                        모든 요소가 조화롭게 어우러진 더 웨스턴 글램핑만의 시그니처 연출입니다.
                     </p>
                     <button className="btn-secondary px-12 py-4 text-lg">지금 예약하기</button>
                 </motion.div>

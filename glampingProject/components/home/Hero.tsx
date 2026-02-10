@@ -163,7 +163,7 @@ export function Hero() {
                         <span className="text-white/90">유일한 안식처</span>
                     </h1>
                     <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/80 mb-12 font-light leading-relaxed break-keep font-sans">
-                        소유하는 것만으로 자부심이 되는 루미나의 멤버십.<br />
+                        소유하는 것만으로 자부심이 되는 더 웨스턴의 멤버십.<br />
                         당신만의 숲 속 별장에서 시간이 멈추는 경험을 선사합니다.
                     </p>
                     

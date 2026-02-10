@@ -8,7 +8,7 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                     {/* Brand */}
                     <div className="space-y-4">
-                        <h3 className="text-2xl font-serif font-bold tracking-wider text-secondary">루미나</h3>
+                        <h3 className="text-2xl font-serif font-bold tracking-wider text-secondary">더 웨스턴</h3>
                         <p className="text-primary-foreground/80 leading-relaxed max-w-sm break-keep">
                             자연을 해치지 않는 럭셔리. 숲 속 깊은 곳에서 경험하는 최고의 글램핑 휴가를 선사합니다.
                         </p>
@@ -45,7 +45,7 @@ export function Footer() {
                             </li>
                             <li className="flex items-center space-x-3 text-primary-foreground/70">
                                 <Mail size={20} className="shrink-0" />
-                                <span>stay@luminaglamping.kr</span>
+                                <span>stay@the-western-glamping.kr</span>
                             </li>
                         </ul>
                     </div>

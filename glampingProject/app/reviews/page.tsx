@@ -136,7 +136,7 @@ export default function ReviewsPage() {
             <Section className="bg-primary/5">
                 <div className="text-center max-w-2xl mx-auto">
                     <SectionHeader 
-                        title="루미나 글램핑을 경험해 보세요" 
+                        title="더 웨스턴 글램핑을 경험해 보세요" 
                         description="특별한 추억을 만들어 드리겠습니다."
                         className="mb-8"
                     />

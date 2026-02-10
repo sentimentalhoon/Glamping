@@ -13,10 +13,10 @@ const LOCATION_DATA = {
         road: "경기도 가평군 청평면 호반로 000-00",
         jibun: "경기도 가평군 청평면 삼회리 000-0",
     },
-    addressDetail: "루미나 글램핑 (Lumina Glamping)",
+    addressDetail: "더 웨스턴 글램핑 (The Western Glamping)",
     contact: {
         phone: "031-000-0000",
-        email: "info@luminaglamping.com",
+        email: "info@the-western-glamping.com",
     },
     mapUrl: {
         naver: "https://map.naver.com/",
@@ -26,7 +26,7 @@ const LOCATION_DATA = {
         car: [
             "서울양양고속도로 → 청평IC 진출",
             "좌회전 후 호반로 따라 약 10분",
-            "네비게이션 검색: '루미나 글램핑'",
+            "네비게이션 검색: '더 웨스턴 글램핑'",
         ],
         publicTransport: [
             "청평역 하차 → 택시 약 15분",
