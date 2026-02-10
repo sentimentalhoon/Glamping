@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 
 export function LogoShowcase() {
     const logos = [
-        // 1. Classic Luxury
+        // --- ORIGINAL 24 LOGOS ---
         {
             id: 1,
             name: "Classic Wordmark",
@@ -19,7 +19,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 2. Modern Minimal
         {
             id: 2,
             name: "Modern Minimal",
@@ -35,7 +34,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 3. Vintage Emblem
         {
             id: 3,
             name: "Badge Emblem",
@@ -51,10 +49,9 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 4. Korean Identity
         {
             id: 4,
-            name: "Korean Identity",
+            name: "Korean Identity (Basic)",
             description: "Nanum Myeongjo",
             component: (
                 <div className="flex items-center justify-center w-full h-full bg-[#F5F5F0] p-8">
@@ -65,7 +62,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 5. Monogram Luxury
         {
             id: 5,
             name: "Royal Monogram",
@@ -80,7 +76,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 6. Nature Outline
         {
             id: 6,
             name: "Nature Line",
@@ -97,7 +92,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-         // 7. Signature Script
          {
             id: 7,
             name: "Signature",
@@ -111,7 +105,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 8. Geometric Abstract
         {
             id: 8,
             name: "Geo Abstract",
@@ -127,7 +120,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 9. Circle Badge
         {
             id: 9,
             name: "Circle Badge",
@@ -146,7 +138,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 10. Pine Tree
         {
             id: 10,
             name: "Forest Icon",
@@ -163,7 +154,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 11. Boxed Frame
         {
             id: 11,
             name: "Boxed Frame",
@@ -179,7 +169,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 12. Sunset Gradient
         {
             id: 12,
             name: "Sunset",
@@ -192,7 +181,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 13. Minimal Dot
         {
             id: 13,
             name: "Minimal Dot",
@@ -206,7 +194,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 14. Campfire
         {
             id: 14,
             name: "Campfire",
@@ -225,7 +212,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 15. Brutalism
         {
             id: 15,
             name: "Brutalism",
@@ -238,7 +224,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 16. Vertical Stack
         {
             id: 16,
             name: "Vertical Stack",
@@ -253,7 +238,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 17. Hexagon
         {
             id: 17,
             name: "Hexagon",
@@ -266,7 +250,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 18. Underline Accent
         {
             id: 18,
             name: "Underline Accent",
@@ -280,7 +263,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 19. Wave
         {
             id: 19,
             name: "Ocean Wave",
@@ -296,7 +278,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 20. Glitch
         {
             id: 20,
             name: "Digital Glitch",
@@ -311,7 +292,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 21. Shield
         {
             id: 21,
             name: "Royal Shield",
@@ -324,7 +304,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 22. Handwriting 2
         {
             id: 22,
             name: "Signature 2",
@@ -337,7 +316,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 23. Star
         {
             id: 23,
             name: "North Star",
@@ -353,7 +331,6 @@ export function LogoShowcase() {
                 </div>
             )
         },
-        // 24. Typographic Play
         {
             id: 24,
             name: "Typographic",
@@ -365,6 +342,194 @@ export function LogoShowcase() {
                     </div>
                 </div>
             )
+        },
+
+        // --- NEW KOREAN LOGOS (12 VARIATIONS) ---
+        
+        // 25. Elegant Myeongjo Vertical
+        {
+            id: 25,
+            name: "Korean Vertical",
+            description: "Vertical Myeongjo",
+            component: (
+                <div className="flex items-center justify-center w-full h-full bg-[#f8f8f8] p-8">
+                   <div className="flex gap-4 items-center">
+                       <div className="w-[1px] h-16 bg-black/20"></div>
+                       <div className="writing-vertical-lr text-xl font-serif font-bold tracking-[0.3em] text-neutral-800" style={{ writingMode: "vertical-rl" }}>
+                           더웨스턴
+                       </div>
+                   </div>
+                </div>
+            )
+        },
+        // 26. Modern Gothic
+        {
+            id: 26,
+            name: "Modern Gothic KR",
+            description: "Bold & Clean",
+            component: (
+                <div className="flex items-center justify-center w-full h-full bg-white p-8">
+                    <div className="border-2 border-black px-4 py-2">
+                        <h3 className="text-2xl font-black text-black">더 웨스턴</h3>
+                    </div>
+                </div>
+            )
+        },
+        // 27. Brush Script
+        {
+            id: 27,
+            name: "Brush Calligraphy",
+            description: "Traditional Ink",
+            component: (
+                <div className="flex items-center justify-center w-full h-full bg-[#fffcf0] p-8">
+                    <h3 className="text-3xl text-stone-800 transform -rotate-2" style={{ fontFamily: "serif", fontWeight: 900 }}>
+                        더<br/>웨스턴
+                    </h3>
+                </div>
+            )
+        },
+         // 28. Red Stamp
+         {
+            id: 28,
+            name: "Seal Stamp",
+            description: "Dojang Style",
+            component: (
+                <div className="flex items-center justify-center w-full h-full bg-white p-8">
+                    <div className="w-20 h-20 border-4 border-red-700 rounded-lg flex flex-col items-center justify-center p-1">
+                        <span className="text-red-700 font-serif font-bold text-xs leading-none">THE</span>
+                        <div className="flex gap-1 text-red-700 font-black text-2xl leading-none my-1">
+                            <span>웨</span><span>스</span>
+                        </div>
+                        <div className="flex gap-1 text-red-700 font-black text-2xl leading-none">
+                            <span>턴</span><span>캠</span>
+                        </div>
+                        <span className="text-red-700 font-serif font-bold text-xs leading-none mt-1">EST</span>
+                    </div>
+                </div>
+            )
+        },
+        // 29. Circle Script
+        {
+            id: 29,
+            name: "Circle Harmony",
+            description: "Rounded Layout",
+            component: (
+                <div className="flex items-center justify-center w-full h-full bg-[#2c2c2c] p-8">
+                    <div className="w-28 h-28 rounded-full border border-white/30 flex items-center justify-center">
+                        <div className="text-center">
+                            <span className="block text-white/60 text-[0.6rem] uppercase tracking-widest mb-1">PREMIUM</span>
+                            <h3 className="text-white font-serif font-bold text-lg">더 웨스턴</h3>
+                            <span className="block text-white/60 text-[0.6rem] uppercase tracking-widest mt-1">GLAMPING</span>
+                        </div>
+                    </div>
+                </div>
+            )
+        },
+        // 30. Minimalist Hangul layout
+        {
+            id: 30,
+            name: "Hangul Minimal",
+            description: "Spatial Design",
+            component: (
+                <div className="flex items-center justify-center w-full h-full bg-white p-8">
+                    <div className="grid grid-cols-2 gap-4 text-center">
+                        <span className="text-2xl font-light text-gray-400">더</span>
+                        <span className="text-2xl font-bold text-black border-b-2 border-black pb-1">웨</span>
+                        <span className="text-2xl font-bold text-black border-t-2 border-black pt-1">스</span>
+                        <span className="text-2xl font-light text-gray-400">턴</span>
+                    </div>
+                </div>
+            )
+        },
+        // 31. Retro Poster
+        {
+            id: 31,
+            name: "Retro Poster",
+            description: "70s/80s Vibe",
+            component: (
+                <div className="flex items-center justify-center w-full h-full bg-[#d6411d] p-8">
+                     <div className="text-center">
+                         <h3 className="text-4xl font-black text-[#f2e7c9] shadow-md transform rotate-12">웨스턴</h3>
+                     </div>
+                </div>
+            )
+        },
+        // 32. Nature & Hangul
+        {
+            id: 32,
+            name: "Nature Hangul",
+            description: "Eco-Friendly",
+            component: (
+                <div className="flex items-center justify-center w-full h-full bg-[#f1f8f3] p-8">
+                    <div className="text-center">
+                        <span className="block text-2xl font-bold text-[#2e5c3e] mb-1">더 웨스턴</span>
+                        <svg className="w-8 h-8 mx-auto text-[#4a9c68]" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20C19,20,22,3,22,3Z" />
+                        </svg>
+                    </div>
+                </div>
+            )
+        },
+        // 33. Vertical Box Hybrid
+        {
+            id: 33,
+            name: "Vertical Box",
+            description: "Signage Style",
+            component: (
+                <div className="flex items-center justify-center w-full h-full bg-[#1a202c] p-8">
+                    <div className="bg-[#D4AF37] px-3 py-4 rounded-sm shadow-lg">
+                        <div className="writing-vertical-rl text-black font-bold text-xl tracking-widest h-full flex flex-col justify-between" style={{ writingMode: "vertical-rl" }}>
+                            <span>더</span>
+                            <span className="my-2 opacity-50">•</span>
+                            <span>웨스턴</span>
+                        </div>
+                    </div>
+                </div>
+            )
+        },
+        // 34. Thin Elegant
+        {
+            id: 34,
+            name: "Thin Elegance",
+            description: "Ultra Fine",
+            component: (
+                <div className="flex items-center justify-center w-full h-full bg-white p-8">
+                    <div className="relative">
+                        <h3 className="text-3xl font-thin text-black tracking-widest">더웨스턴</h3>
+                        <div className="absolute -bottom-1 w-full h-[1px] bg-black"></div>
+                        <div className="absolute -top-1 w-full h-[1px] bg-black"></div>
+                    </div>
+                </div>
+            )
+        },
+        // 35. Ink Wash
+        {
+            id: 35,
+            name: "Ink Wash",
+            description: "Oriental Vibe",
+            component: (
+                <div className="flex items-center justify-center w-full h-full bg-[#e6e6e6] p-8">
+                    <div className="relative z-10">
+                        <div className="absolute inset-0 bg-gray-400 blur-xl opacity-30 rounded-full"></div>
+                        <h3 className="relative text-2xl font-serif font-black text-gray-800 z-10">더 웨스턴</h3>
+                    </div>
+                </div>
+            )
+        },
+        // 36. Golden Heritage
+        {
+            id: 36,
+            name: "Golden Heritage",
+            description: "Premium Korean",
+            component: (
+                <div className="flex items-center justify-center w-full h-full bg-[#000000] p-8">
+                     <div className="border border-[#D4AF37] p-1">
+                        <div className="border border-[#D4AF37] px-4 py-2 bg-[#D4AF37]/10">
+                            <h3 className="text-xl text-[#D4AF37] font-serif">더 웨스턴</h3>
+                        </div>
+                     </div>
+                </div>
+            )
         }
     ];
 
@@ -373,7 +538,7 @@ export function LogoShowcase() {
             <div className="container-width px-4">
                 <SectionHeading 
                     title="Brand Identity Collection" 
-                    subtitle="24 DESIGN CONCEPTS" 
+                    subtitle="36 DESIGN CONCEPTS" 
                     className="mb-16"
                 />
                 
@@ -399,7 +564,7 @@ export function LogoShowcase() {
                 </div>
                 
                 <p className="text-center mt-12 text-sm text-foreground/40">
-                    * 다양한 브랜드 아이덴티티 시안 모음
+                    * 국문/영문 및 다양한 스타일의 36가지 브랜드 아이덴티티 시안
                 </p>
             </div>
         </section>
