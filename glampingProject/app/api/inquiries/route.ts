@@ -19,6 +19,10 @@ type InquiryPayload = {
   referrer?: string;
 };
 
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const RATE_LIMIT_MAX_REQUESTS = 12;
+const ipHits = new Map<string, number[]>();
+
 function normalize(value: unknown): string {
   return typeof value === "string" ? value.trim() : "";
 }
@@ -26,6 +30,36 @@ function normalize(value: unknown): string {
 function isValidPhone(phone: string): boolean {
   const digits = phone.replace(/[^\d]/g, "");
   return digits.length >= 9;
+}
+
+function getClientIp(req: Request): string {
+  const forwardedFor = req.headers.get("x-forwarded-for");
+  if (forwardedFor) {
+    const firstIp = forwardedFor.split(",")[0]?.trim();
+    if (firstIp) return firstIp;
+  }
+
+  const realIp = req.headers.get("x-real-ip");
+  if (realIp) return realIp.trim();
+
+  return "unknown";
+}
+
+function isRateLimited(ip: string, now = Date.now()): boolean {
+  const cutoff = now - RATE_LIMIT_WINDOW_MS;
+  const recentHits = (ipHits.get(ip) ?? []).filter((time) => time > cutoff);
+  recentHits.push(now);
+  ipHits.set(ip, recentHits);
+
+  if (ipHits.size > 5000) {
+    for (const [key, hits] of ipHits) {
+      if (hits.length === 0 || hits[hits.length - 1] <= cutoff) {
+        ipHits.delete(key);
+      }
+    }
+  }
+
+  return recentHits.length > RATE_LIMIT_MAX_REQUESTS;
 }
 
 function buildAdminMessage(lead: {
@@ -66,6 +100,16 @@ function buildAdminMessage(lead: {
 }
 
 export async function POST(req: Request) {
+  const requestId = crypto.randomUUID();
+  const ip = getClientIp(req);
+
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { ok: false, message: "요청이 너무 많습니다. 잠시 후 다시 시도해 주세요." },
+      { status: 429, headers: { "Retry-After": "600" } }
+    );
+  }
+
   try {
     const body = (await req.json()) as InquiryPayload;
 
@@ -92,7 +136,7 @@ export async function POST(req: Request) {
 
     if (!name || !isValidPhone(phone) || !interest || !consent) {
       return NextResponse.json(
-        { ok: false, message: "필수 항목이 누락되었거나 형식이 올바르지 않습니다." },
+        { ok: false, message: "필수 항목을 확인해 주세요. 입력 형식이 올바르지 않습니다." },
         { status: 400 }
       );
     }
@@ -134,17 +178,24 @@ export async function POST(req: Request) {
       });
 
       if (!webhookRes.ok) {
+        console.error("[inquiry:webhook-failed]", {
+          requestId,
+          ip,
+          status: webhookRes.status,
+        });
+
         return NextResponse.json(
           { ok: false, message: "리드 전송에 실패했습니다. 잠시 후 다시 시도해 주세요." },
           { status: 502 }
         );
       }
     } else {
-      console.info("[inquiry:fallback-log]", lead);
+      console.info("[inquiry:fallback-log]", { requestId, ip, lead });
     }
 
     return NextResponse.json({ ok: true, message: "접수되었습니다." }, { status: 200 });
-  } catch {
+  } catch (error) {
+    console.error("[inquiry:unexpected-error]", { requestId, ip, error });
     return NextResponse.json(
       { ok: false, message: "요청 처리 중 오류가 발생했습니다." },
       { status: 500 }

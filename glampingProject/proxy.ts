@@ -28,6 +28,8 @@ export function proxy(request: NextRequest) {
   if (cookieVariant !== resolvedVariant) {
     response.cookies.set(VARIANT_COOKIE_KEY, resolvedVariant, {
       path: "/lp",
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       maxAge: 60 * 60 * 24 * 30,
     });
