@@ -75,21 +75,21 @@ export function Navbar() {
             ref={navRef}
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen
                     ? "bg-background/90 backdrop-blur-xl shadow-sm py-4 border-b border-border/10"
-                    : "bg-gradient-to-b from-black/80 to-transparent py-8"
+                    : "bg-gradient-to-b from-black/80 to-transparent py-7"
                 }`}
         >
             <div className="container-width flex items-center justify-between">
                 <Link
                     href="/"
-                    className={`text-2xl font-serif font-bold tracking-[0.2em] uppercase transition-colors duration-500 ${isScrolled || isMobileMenuOpen ? "text-primary" : "text-white"
+                    className={`brand-wordmark text-xl md:text-2xl transition-colors duration-500 ${isScrolled || isMobileMenuOpen ? "text-primary" : "text-white"
                         }`}
                 >
                     The Western
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center space-x-6">
-                    <div className="flex items-center space-x-10 mr-6">
+                <div className="hidden md:flex items-center space-x-5 lg:space-x-6">
+                    <div className="flex items-center space-x-7 lg:space-x-8 mr-4 lg:mr-6">
                         {navLinks.map((group, index) => (
                             <div
                                 key={group.name}
@@ -98,7 +98,7 @@ export function Navbar() {
                                 onMouseLeave={() => setHoveredIndex(null)}
                             >
                                 <button
-                                    className={`flex items-center gap-1 transition-all duration-300 text-xs font-medium tracking-[0.15em] uppercase ${isScrolled
+                                    className={`flex items-center gap-1 transition-all duration-300 nav-label ${isScrolled
                                             ? "text-foreground/70 hover:text-primary"
                                             : "text-white/80 hover:text-white"
                                         }`}
@@ -120,7 +120,7 @@ export function Navbar() {
                                                     <Link
                                                         key={item.name}
                                                         href={item.href}
-                                                        className="block px-6 py-3 text-sm text-foreground/70 hover:text-primary hover:bg-primary/5 transition-colors font-serif"
+                                                        className="block px-6 py-3 text-sm text-foreground/70 hover:text-primary hover:bg-primary/5 transition-colors font-serif font-medium tracking-[-0.01em]"
                                                     >
                                                         {item.name}
                                                     </Link>
@@ -138,7 +138,7 @@ export function Navbar() {
                         <Button 
                             href="/#inquiry"
                             variant={isScrolled ? "primary" : "outline"}
-                            className={`${!isScrolled ? "border-white/40 text-white hover:bg-white hover:text-primary" : ""} px-6 text-xs uppercase tracking-widest`}
+                            className={`${!isScrolled ? "border-white/40 text-white hover:bg-white hover:text-primary" : ""} px-6 nav-label`}
                         >
                             Private Tour
                         </Button>
@@ -171,7 +171,7 @@ export function Navbar() {
                                 <div key={group.name} className="border-b border-border/30 last:border-0 pb-4 last:pb-0">
                                     <button
                                         onClick={() => setMobileExpandedIndex(mobileExpandedIndex === index ? null : index)}
-                                        className="flex items-center justify-between w-full py-2 text-sm font-medium text-foreground/60 uppercase tracking-widest"
+                                        className="flex items-center justify-between w-full py-2 text-sm font-semibold text-foreground/60 uppercase tracking-[0.12em]"
                                     >
                                         {group.name}
                                         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileExpandedIndex === index ? "rotate-180" : ""}`} />
@@ -189,7 +189,7 @@ export function Navbar() {
                                                         <Link
                                                             key={item.name}
                                                             href={item.href}
-                                                            className="py-2 text-foreground/60 hover:text-primary transition-colors text-base"
+                                                            className="py-2 text-foreground/60 hover:text-primary transition-colors text-base font-medium tracking-[-0.01em]"
                                                             onClick={() => setIsMobileMenuOpen(false)}
                                                         >
                                                             {item.name}
@@ -202,7 +202,7 @@ export function Navbar() {
                                 </div>
                             ))}
                             <div className="pt-6">
-                                <Button href="/#inquiry" className="w-full text-sm uppercase tracking-widest py-4">
+                                <Button href="/#inquiry" className="w-full text-sm uppercase tracking-[0.12em] py-4">
                                     Private Tour 신청
                                 </Button>
                             </div>

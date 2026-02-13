@@ -42,12 +42,12 @@ export function OwnershipBenefits() {
                         viewport={{ once: true }}
                         className="lg:w-1/3 lg:sticky lg:top-32"
                     >
-                        <span className="section-subheading text-secondary mb-4">Ownership Privilege</span>
+                        <span className="section-subheading mb-4">Ownership Privilege</span>
                         <h2 className="display-heading mb-8 text-white">
                             선택된 소수만의<br />
                             <span className="text-white/70">특권</span>
                         </h2>
-                        <p className="text-white/60 font-light leading-relaxed mb-10 text-lg">
+                        <p className="text-white/68 font-normal leading-[1.85] mb-10 text-base md:text-lg">
                             더 웨스턴 멤버십은 단순한 이용권이 아닙니다.<br />
                             당신의 품격에 걸맞은 하이엔드 라이프스타일 제안입니다.
                         </p>
@@ -69,9 +69,9 @@ export function OwnershipBenefits() {
                                 <div className="mb-6 inline-block p-4 rounded-full bg-white/5 border border-white/10 group-hover:bg-secondary group-hover:border-secondary transition-all duration-500">
                                     <benefit.icon className="w-8 h-8 text-secondary group-hover:text-[#1A2F23] transition-colors duration-500" />
                                 </div>
-                                <h3 className="text-xl font-serif font-bold mb-3 tracking-wide">{benefit.title}</h3>
+                                <h3 className="font-serif text-xl font-semibold tracking-[-0.01em] mb-3">{benefit.title}</h3>
                                 <div className="w-12 h-[1px] bg-white/20 mb-4 group-hover:w-full group-hover:bg-secondary/50 transition-all duration-700"></div>
-                                <p className="text-white/60 font-light leading-relaxed break-keep">
+                                <p className="text-white/68 font-normal leading-[1.8] break-keep">
                                     {benefit.description}
                                 </p>
                             </motion.div>

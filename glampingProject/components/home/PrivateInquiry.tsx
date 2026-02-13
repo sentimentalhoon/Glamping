@@ -68,7 +68,7 @@ export function PrivateInquiry() {
         throw new Error(data.message ?? "요청 처리에 실패했습니다.");
       }
 
-      setSubmitMessage("상담 신청이 접수되었습니다. 24시간 이내 연락드리겠습니다.");
+      setSubmitMessage("상담 요청이 접수되었습니다. 24시간 이내 연락드리겠습니다.");
       setForm(DEFAULT_FORM);
     } catch (err) {
       const isOffline =
@@ -95,11 +95,9 @@ export function PrivateInquiry() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="section-subheading text-secondary">Private Invitation</span>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-6">
-            멤버십 상담 신청
-          </h2>
-          <p className="text-foreground/70 mb-8 leading-relaxed break-keep">
+          <span className="section-subheading">Private Invitation</span>
+          <h2 className="section-heading text-3xl md:text-4xl mb-6">멤버십 상담 요청</h2>
+          <p className="text-foreground/72 mb-8 leading-[1.85] break-keep text-base md:text-lg font-normal">
             회원권 상품, 이용 방식, 방문 투어 일정까지 전담 매니저가 1:1로 안내합니다.
           </p>
         </motion.div>
@@ -114,7 +112,7 @@ export function PrivateInquiry() {
           <form className="space-y-8" onSubmit={handleSubmit} noValidate>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="text-xs uppercase tracking-widest text-muted-foreground">
+                <label className="text-xs uppercase tracking-[0.12em] text-muted-foreground font-semibold">
                   Name *
                 </label>
                 <input
@@ -127,7 +125,7 @@ export function PrivateInquiry() {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs uppercase tracking-widest text-muted-foreground">
+                <label className="text-xs uppercase tracking-[0.12em] text-muted-foreground font-semibold">
                   Contact *
                 </label>
                 <input
@@ -143,7 +141,7 @@ export function PrivateInquiry() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2">
-                <label className="text-xs uppercase tracking-widest text-muted-foreground">
+                <label className="text-xs uppercase tracking-[0.12em] text-muted-foreground font-semibold">
                   Interest *
                 </label>
                 <select
@@ -152,14 +150,14 @@ export function PrivateInquiry() {
                   required
                   className="w-full bg-transparent border-b border-border py-3 focus:outline-none focus:border-secondary transition-colors text-lg appearance-none cursor-pointer"
                 >
-                  <option value="">관심 분야를 선택해주세요</option>
+                  <option value="">관심 분야를 선택해 주세요</option>
                   <option value="corporate">법인 멤버십 상담</option>
                   <option value="personal">개인 멤버십 상담</option>
                   <option value="tour">현장 투어 예약</option>
                 </select>
               </div>
               <div className="space-y-2">
-                <label className="text-xs uppercase tracking-widest text-muted-foreground">
+                <label className="text-xs uppercase tracking-[0.12em] text-muted-foreground font-semibold">
                   Budget (Optional)
                 </label>
                 <select
@@ -167,7 +165,7 @@ export function PrivateInquiry() {
                   onChange={(e) => setForm((prev) => ({ ...prev, budget: e.target.value }))}
                   className="w-full bg-transparent border-b border-border py-3 focus:outline-none focus:border-secondary transition-colors text-lg appearance-none cursor-pointer"
                 >
-                  <option value="">예산 범위를 선택해주세요</option>
+                  <option value="">예산 범위를 선택해 주세요</option>
                   <option value="under-10m">1천만원 이하</option>
                   <option value="10m-30m">1천만원 ~ 3천만원</option>
                   <option value="over-30m">3천만원 이상</option>
@@ -176,7 +174,7 @@ export function PrivateInquiry() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs uppercase tracking-widest text-muted-foreground">
+              <label className="text-xs uppercase tracking-[0.12em] text-muted-foreground font-semibold">
                 Preferred Visit Date (Optional)
               </label>
               <input
@@ -190,7 +188,7 @@ export function PrivateInquiry() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs uppercase tracking-widest text-muted-foreground">
+              <label className="text-xs uppercase tracking-[0.12em] text-muted-foreground font-semibold">
                 Email (Optional)
               </label>
               <input
@@ -203,14 +201,14 @@ export function PrivateInquiry() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs uppercase tracking-widest text-muted-foreground">
+              <label className="text-xs uppercase tracking-[0.12em] text-muted-foreground font-semibold">
                 Message (Optional)
               </label>
               <textarea
                 rows={3}
                 value={form.message}
                 onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
-                placeholder="상담 희망 일정/문의 내용을 남겨주세요."
+                placeholder="상담 희망 일정/문의 내용을 남겨주세요"
                 className="w-full bg-transparent border-b border-border py-3 focus:outline-none focus:border-secondary transition-colors resize-none text-lg"
               ></textarea>
             </div>
@@ -255,10 +253,10 @@ export function PrivateInquiry() {
                 disabled={!isValid || isSubmitting}
                 className="w-full md:w-auto min-w-0 md:min-w-[300px] text-lg py-6"
               >
-                {isSubmitting ? "접수 중..." : "멤버십 상담 신청"}
+                {isSubmitting ? "접수 중..." : "멤버십 상담 요청"}
               </Button>
               <p className="mt-4 text-xs text-muted-foreground">
-                * 신청 후 24시간 이내에 전담 매니저가 연락드립니다.
+                * 요청 후 24시간 이내 전담 매니저가 연락드립니다.
               </p>
             </div>
           </form>

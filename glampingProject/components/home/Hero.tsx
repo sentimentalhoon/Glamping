@@ -89,7 +89,7 @@ export function Hero() {
     return (
         <section 
             ref={containerRef} 
-            className="relative h-screen w-full overflow-hidden bg-[#1A2F23] perspective-1000"
+            className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#1A2F23] perspective-1000"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ perspective: "1200px" }} // CSS variable for perspective
@@ -159,14 +159,14 @@ export function Hero() {
                     }}
                     className="transform-gpu"
                 >
-                    <span className="section-subheading text-secondary mb-6 tracking-[0.2em] uppercase text-sm md:text-base block">
+                    <span className="section-subheading mb-6 md:mb-7 text-secondary/95">
                         The Private Estate
                     </span>
-                    <h1 className="display-heading mb-8 break-keep drop-shadow-lg text-white">
+                    <h1 className="display-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[-0.024em] mb-8 md:mb-10 break-keep text-balance drop-shadow-lg text-white max-w-[22ch] md:max-w-4xl">
                         자연이 허락한<br />
                         <span className="text-white/90">유일한 안식처</span>
                     </h1>
-                    <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/80 mb-12 font-light leading-relaxed break-keep font-sans">
+                    <p className="max-w-[34ch] md:max-w-3xl mx-auto text-[15px] md:text-lg text-white/85 mb-12 md:mb-14 font-normal leading-[1.88] break-keep text-balance font-sans">
                         소유하는 것만으로 자부심이 되는 더 웨스턴의 멤버십.<br />
                         당신만의 숲 속 별장에서 시간이 멈추는 경험을 선사합니다.
                     </p>
@@ -176,7 +176,7 @@ export function Hero() {
                             href="/#inquiry"
                             variant="secondary"
                             size="lg"
-                            className="min-w-[240px] text-lg py-4 px-8 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
+                            className="min-w-[220px] md:min-w-[240px] text-base md:text-lg tracking-[0.06em] py-3.5 md:py-4 px-8 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
                         >
                             멤버십 상담 신청
                         </Button>
@@ -190,7 +190,7 @@ export function Hero() {
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer pointer-events-auto"
                 onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
             >
-                 <span className="text-[10px] uppercase tracking-[0.3em] text-white/50">Explore</span>
+                 <span className="text-[10px] uppercase tracking-[0.24em] text-white/55">Explore</span>
                  <div className="w-[1px] h-12 bg-gradient-to-b from-white/0 via-white/50 to-white/0 animate-pulse"></div>
             </motion.div>
         </section>

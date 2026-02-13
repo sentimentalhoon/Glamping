@@ -19,13 +19,13 @@ export function LocationSection() {
                         viewport={{ once: true }}
                         className="w-full lg:w-1/3"
                     >
-                        <span className="section-subheading text-secondary mb-4">The Location</span>
+                        <span className="section-subheading mb-4">The Location</span>
                         <h2 className="display-heading text-foreground mb-6">
                             세상과 단절된<br />
                             완벽한 고요
                         </h2>
                         <div className="w-16 h-[1px] bg-secondary/50 mb-8"></div>
-                        <div className="space-y-6 text-foreground/70 font-light leading-relaxed">
+                        <div className="space-y-6 text-foreground/72 font-normal leading-[1.85]">
                             <p>
                                 변산반도의 붉은 노을이 머무는 곳.<br />
                                 고사포 해변의 솔숲과 서해의 파도 소리가 어우러진 

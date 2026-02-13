@@ -34,9 +34,9 @@ export function TheCollection() {
                     viewport={{ once: true }}
                     className="text-center mb-20"
                 >
-                    <span className="section-subheading text-secondary">The Collection</span>
+                    <span className="section-subheading">The Collection</span>
                     <h2 className="display-heading text-foreground mb-6">Architectural Masterpieces</h2>
-                    <p className="text-muted-foreground max-w-2xl mx-auto text-lg font-light leading-relaxed">
+                    <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg font-normal leading-[1.85]">
                         자연을 거스르지 않고 스며드는 건축.<br />
                         더 웨스턴의 컬렉션은 공간 그 자체로 예술이 됩니다.
                     </p>
@@ -66,8 +66,8 @@ export function TheCollection() {
                             <div className="space-y-4">
                                 <div className="flex justify-between items-end border-b border-border/40 pb-4">
                                     <div>
-                                        <span className="text-secondary text-xs tracking-widest uppercase mb-2 block">{item.subtitle}</span>
-                                        <h3 className="text-3xl font-serif font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                                        <span className="section-subheading text-secondary/80 mb-2">{item.subtitle}</span>
+                                        <h3 className="font-serif text-3xl font-semibold tracking-[-0.015em] text-foreground group-hover:text-primary transition-colors duration-300">
                                             {item.title}
                                         </h3>
                                     </div>
@@ -75,7 +75,7 @@ export function TheCollection() {
                                         <ArrowRight className="text-primary w-8 h-8" />
                                     </div>
                                 </div>
-                                <p className="text-foreground/70 font-light leading-relaxed line-clamp-2">
+                                <p className="text-foreground/72 font-normal leading-[1.8] line-clamp-2">
                                     {item.description}
                                 </p>
                                 <div className="flex gap-4 pt-2">

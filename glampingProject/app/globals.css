@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --font-noto-sans: "Pretendard";
-  --font-nanum-myeongjo: "Batang";
+  --font-body-fallback: "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", sans-serif;
+  --font-display-fallback: "Nanum Myeongjo", "AppleMyungjo", serif;
 
   /* --- Light Mode Tokens --- */
   --color-primary: #1A2F23;
@@ -79,8 +79,8 @@
   --color-accent: var(--color-accent);
   --color-accent-foreground: var(--color-accent-foreground);
 
-  --font-sans: var(--font-noto-sans), "Pretendard", "Malgun Gothic", sans-serif;
-  --font-serif: var(--font-nanum-myeongjo), "Batang", serif;
+  --font-sans: var(--font-body), var(--font-body-fallback);
+  --font-serif: var(--font-display), var(--font-display-fallback);
 
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
@@ -92,6 +92,8 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -100,24 +102,45 @@ body {
 @layer utilities {
   .font-display {
     font-family: var(--font-serif);
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 
   /* Standard Heading Classes */
   .display-heading {
-    @apply font-serif font-bold text-5xl md:text-7xl lg:text-8xl leading-tight;
+    @apply font-serif font-semibold tracking-[-0.02em] text-5xl md:text-7xl lg:text-8xl leading-[1.06];
   }
 
   .section-heading {
-    @apply font-serif font-bold text-3xl md:text-5xl mb-6 text-primary;
+    @apply font-serif font-semibold tracking-[-0.015em] text-3xl md:text-5xl mb-6 text-primary leading-[1.12];
   }
 
   .section-subheading {
-    @apply text-secondary uppercase tracking-widest text-sm font-medium block mb-4;
+    @apply text-secondary/90 uppercase tracking-[0.2em] text-xs md:text-sm font-semibold block mb-4;
   }
 
   .card-heading {
-    @apply font-bold text-xl text-primary mb-2;
+    @apply font-semibold tracking-[-0.01em] text-xl text-primary mb-2;
+  }
+
+  .brand-wordmark {
+    @apply font-serif font-semibold uppercase tracking-[0.14em];
+  }
+
+  .nav-label {
+    @apply text-xs font-semibold uppercase tracking-[0.14em];
+  }
+
+  .lp-eyebrow {
+    @apply text-secondary/90 uppercase tracking-[0.2em] text-xs md:text-sm font-semibold block mb-4;
+  }
+
+  .lp-title {
+    @apply font-serif font-semibold tracking-[-0.02em] leading-[1.12] break-keep;
+  }
+
+  .lp-body {
+    @apply text-base md:text-lg leading-[1.85] text-foreground/78 break-keep;
   }
 
   /* Layout Utilities */
@@ -131,11 +154,11 @@ body {
 
   /* Component Base Styles */
   .btn-primary {
-    @apply bg-primary text-white px-8 py-3 rounded-full font-medium tracking-wide hover:bg-primary/90 transition-all shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply bg-primary text-white px-8 py-3 rounded-full font-medium tracking-[0.04em] hover:bg-primary/90 transition-all shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
   .btn-secondary {
-    @apply bg-secondary text-primary px-8 py-3 rounded-full font-medium tracking-wide hover:bg-white hover:text-primary transition-all shadow-md hover:shadow-lg;
+    @apply bg-secondary text-primary px-8 py-3 rounded-full font-medium tracking-[0.04em] hover:bg-white hover:text-primary transition-all shadow-md hover:shadow-lg;
   }
 
   .card {
