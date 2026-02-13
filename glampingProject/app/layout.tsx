@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { PWARegister } from "@/components/pwa/PWARegister";
+import { InstallPrompt } from "@/components/pwa/InstallPrompt";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
@@ -76,7 +78,12 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: "/hero.jpg",
+  },
+  appleWebApp: {
+    capable: true,
+    title: "더 웨스턴 글램핑",
+    statusBarStyle: "black-translucent",
   },
   verification: {
     ...(GOOGLE_SITE_VERIFICATION ? { google: GOOGLE_SITE_VERIFICATION } : {}),
@@ -155,6 +162,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <PWARegister />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -162,6 +170,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <InstallPrompt />
         </ThemeProvider>
       </body>
     </html>

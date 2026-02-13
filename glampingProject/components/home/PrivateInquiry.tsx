@@ -71,8 +71,12 @@ export function PrivateInquiry() {
       setSubmitMessage("상담 신청이 접수되었습니다. 24시간 이내 연락드리겠습니다.");
       setForm(DEFAULT_FORM);
     } catch (err) {
+      const isOffline =
+        typeof navigator !== "undefined" && navigator.onLine === false;
       setSubmitError(
-        err instanceof Error
+        isOffline
+          ? "현재 오프라인 상태입니다. 네트워크 연결 후 다시 시도해 주세요."
+          : err instanceof Error
           ? err.message
           : "일시적인 오류가 발생했습니다. 잠시 후 다시 시도해 주세요."
       );
