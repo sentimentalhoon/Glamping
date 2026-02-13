@@ -72,7 +72,7 @@ export function BrandPhilosophy() {
                             >
                                 <div className="w-16 h-0.5 bg-primary/30 my-8" />
                                 <p className="text-lg text-foreground/80 leading-relaxed font-serif">
-                                    "진정한 럭셔리란 자연과 하나되는 순간에 있습니다."
+                                    &ldquo;진정한 럭셔리란 자연과 하나되는 순간에 있습니다.&rdquo;
                                 </p>
                                 <p className="text-foreground/70 leading-relaxed">
                                     더 웨스턴 글램핑은 변산반도의 때 묻지 않은 숲과 바다 사이에 자리 잡고 있습니다. 

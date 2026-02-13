@@ -1,18 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Nanum_Myeongjo, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
-
-const notoSansKr = Noto_Sans_KR({
-  variable: "--font-noto-sans",
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "500", "700", "900"],
-});
-
-const nanumMyeongjo = Nanum_Myeongjo({
-  variable: "--font-nanum-myeongjo",
-  subsets: ["latin"],
-  weight: ["400", "700", "800"],
-});
 
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
@@ -153,9 +140,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" suppressHydrationWarning>
-      <body
-        className={`${notoSansKr.variable} ${nanumMyeongjo.variable} antialiased`}
-      >
+      <body className="antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

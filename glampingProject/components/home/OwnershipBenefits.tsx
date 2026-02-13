@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Crown, Key, Clock, Shield } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 const benefits = [
     {
@@ -50,9 +51,9 @@ export function OwnershipBenefits() {
                             더 웨스턴 멤버십은 단순한 이용권이 아닙니다.<br />
                             당신의 품격에 걸맞은 하이엔드 라이프스타일 제안입니다.
                         </p>
-                        <button className="px-8 py-4 border border-secondary text-secondary hover:bg-secondary hover:text-[#1A2F23] transition-all duration-300 uppercase tracking-widest text-sm font-medium">
-                            Membership Guide Download
-                        </button>
+                        <Button href="/#inquiry" variant="secondary">
+                            멤버십 상담 신청
+                        </Button>
                     </motion.div>
 
                     <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">

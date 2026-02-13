@@ -7,20 +7,18 @@ import { TheCollection } from "@/components/home/TheCollection";
 import { OwnershipBenefits } from "@/components/home/OwnershipBenefits";
 import { Gallery } from "@/components/home/Gallery";
 import { PrivateInquiry } from "@/components/home/PrivateInquiry";
-import { LogoShowcase } from "@/components/home/LogoShowcase"; // [NEW]
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <BrandPhilosophy />
-      <LocationSection />
-      <TheCollection />
       <OwnershipBenefits />
+      <TheCollection />
+      <BrandPhilosophy />
       <Gallery />
+      <LocationSection />
       <PrivateInquiry />
-      <LogoShowcase /> {/* [NEW] */}
       <Footer />
     </main>
   );

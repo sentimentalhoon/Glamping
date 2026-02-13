@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 export function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -167,13 +167,15 @@ export function Hero() {
                         당신만의 숲 속 별장에서 시간이 멈추는 경험을 선사합니다.
                     </p>
                     
-                    <div className="flex flex-col md:flex-row gap-4 justify-center items-center transform-gpu translate-z-20">
-                        <button className="btn-secondary min-w-[200px] text-lg py-4 px-8 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] transition-all duration-500">
-                            프라이빗 투어 신청
-                        </button>
-                        <button className="px-8 py-4 text-white border border-white/30 rounded-full hover:bg-white/10 transition-all duration-300 font-medium tracking-wide">
-                            멤버십 혜택 보기
-                        </button>
+                    <div className="flex justify-center items-center transform-gpu translate-z-20">
+                        <Button
+                            href="/#inquiry"
+                            variant="secondary"
+                            size="lg"
+                            className="min-w-[240px] text-lg py-4 px-8 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
+                        >
+                            멤버십 상담 신청
+                        </Button>
                     </div>
                 </motion.div>
             </div>

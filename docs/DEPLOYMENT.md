@@ -23,6 +23,18 @@
     ```
     _참고: 다음 단계에서 Nginx가 이 앱을 감지할 수 있도록 컨테이너가 켜져 있어야 합니다._
 
+### 리드 수집 웹훅 설정 (선택)
+
+멤버십 상담 폼 리드를 외부 시스템으로 전송하려면 `glampingProject`에 `.env`를 생성하고 아래 값을 설정합니다.
+
+```bash
+LEAD_WEBHOOK_URL=https://your-webhook-endpoint
+LEAD_WEBHOOK_FORMAT=json   # json | slack
+```
+
+- `json`: `{ lead, message }` 형태로 전송
+- `slack`: `{ text }` 형태로 전송
+
 ## 2단계: 인프라 설정 (Step 2: Infrastructure Configuration)
 
 `infrastructure` 폴더로 이동합니다.

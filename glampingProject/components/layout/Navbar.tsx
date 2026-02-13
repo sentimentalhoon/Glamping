@@ -46,34 +46,26 @@ export function Navbar() {
 
     const navLinks = [
         {
-            name: "The Estate",
+            name: "Brand",
             items: [
                 { name: "브랜드 철학", href: "/#philosophy" },
                 { name: "로케이션", href: "/#location" },
-                { name: "건축 미학", href: "/#collection" },
             ]
         },
         {
-            name: "Collection",
+            name: "Membership",
             items: [
                 { name: "더 글라스 돔", href: "/#collection" },
-                { name: "더 포레스트 롯지", href: "/#collection" },
-                { name: "시그니처 어메니티", href: "/#collection" },
-            ]
-        },
-        {
-            name: "Ownership",
-            items: [
                 { name: "멤버십 혜택", href: "/#ownership" },
-                { name: "투자 가치", href: "/#ownership" },
-                { name: "입회 상담", href: "/#inquiry" },
+                { name: "공간 둘러보기", href: "/#gallery" },
             ]
         },
         {
-            name: "Culture",
+            name: "Visit",
             items: [
-                { name: "매거진", href: "/#inquiry" },
-                { name: "오너스 라운지", href: "/#inquiry" },
+                { name: "객실 안내", href: "/accommodations" },
+                { name: "부대시설", href: "/amenities" },
+                { name: "투어 신청", href: "/#inquiry" },
             ]
         },
     ];

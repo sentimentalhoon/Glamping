@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 :root {
+  --font-noto-sans: "Pretendard";
+  --font-nanum-myeongjo: "Batang";
+
   /* --- Light Mode Tokens --- */
   --color-primary: #1A2F23;
   --color-primary-foreground: #F9F9F7;

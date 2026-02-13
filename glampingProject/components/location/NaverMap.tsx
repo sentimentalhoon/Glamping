@@ -24,24 +24,7 @@ export function NaverMap({ className = "" }: NaverMapProps) {
     const mapInstanceRef = useRef<naver.maps.Map | null>(null);
     const [is3D, setIs3D] = useState(true);
 
-    useEffect(() => {
-        // 네이버 지도 스크립트 로드
-        if (!window.naver) {
-            const script = document.createElement("script");
-            script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${NAVER_MAP_CLIENT_ID}&submodules=panorama`;
-            script.async = true;
-            script.onload = initMap;
-            document.head.appendChild(script);
-        } else {
-            initMap();
-        }
-
-        return () => {
-            // Cleanup handled by Naver Map internally usually
-        };
-    }, []);
-
-    const initMap = () => {
+    function initMap() {
         if (!mapRef.current || !window.naver) return;
 
         const location = new naver.maps.LatLng(
@@ -70,7 +53,24 @@ export function NaverMap({ className = "" }: NaverMapProps) {
             title: GLAMPING_LOCATION.name,
             animation: naver.maps.Animation.BOUNCE
         });
-    };
+    }
+
+    useEffect(() => {
+        // 네이버 지도 스크립트 로드
+        if (!window.naver) {
+            const script = document.createElement("script");
+            script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${NAVER_MAP_CLIENT_ID}&submodules=panorama`;
+            script.async = true;
+            script.onload = initMap;
+            document.head.appendChild(script);
+        } else {
+            initMap();
+        }
+
+        return () => {
+            // Cleanup handled by Naver Map internally usually
+        };
+    }, []);
 
     const toggle3D = () => {
         if (!mapInstanceRef.current || !window.naver) return;
