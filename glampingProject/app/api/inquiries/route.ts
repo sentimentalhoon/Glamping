@@ -10,6 +10,13 @@ type InquiryPayload = {
   message?: string;
   consent?: boolean;
   website?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmContent?: string;
+  utmTerm?: string;
+  landingPath?: string;
+  referrer?: string;
 };
 
 function normalize(value: unknown): string {
@@ -30,6 +37,13 @@ function buildAdminMessage(lead: {
   budget: string;
   preferredVisitDate: string;
   message: string;
+  utmSource: string;
+  utmMedium: string;
+  utmCampaign: string;
+  utmContent: string;
+  utmTerm: string;
+  landingPath: string;
+  referrer: string;
 }): string {
   return [
     "[멤버십 상담 신규 리드]",
@@ -41,6 +55,13 @@ function buildAdminMessage(lead: {
     `예산범위: ${lead.budget || "-"}`,
     `희망방문일: ${lead.preferredVisitDate || "-"}`,
     `메시지: ${lead.message || "-"}`,
+    `랜딩경로: ${lead.landingPath || "-"}`,
+    `리퍼러: ${lead.referrer || "-"}`,
+    `utm_source: ${lead.utmSource || "-"}`,
+    `utm_medium: ${lead.utmMedium || "-"}`,
+    `utm_campaign: ${lead.utmCampaign || "-"}`,
+    `utm_content: ${lead.utmContent || "-"}`,
+    `utm_term: ${lead.utmTerm || "-"}`,
   ].join("\n");
 }
 
@@ -56,6 +77,13 @@ export async function POST(req: Request) {
     const preferredVisitDate = normalize(body.preferredVisitDate);
     const message = normalize(body.message);
     const website = normalize(body.website);
+    const utmSource = normalize(body.utmSource);
+    const utmMedium = normalize(body.utmMedium);
+    const utmCampaign = normalize(body.utmCampaign);
+    const utmContent = normalize(body.utmContent);
+    const utmTerm = normalize(body.utmTerm);
+    const landingPath = normalize(body.landingPath);
+    const referrer = normalize(body.referrer);
     const consent = body.consent === true;
 
     if (website) {
@@ -80,6 +108,13 @@ export async function POST(req: Request) {
       preferredVisitDate,
       message,
       consent,
+      utmSource,
+      utmMedium,
+      utmCampaign,
+      utmContent,
+      utmTerm,
+      landingPath,
+      referrer,
     };
 
     const adminMessage = buildAdminMessage(lead);
