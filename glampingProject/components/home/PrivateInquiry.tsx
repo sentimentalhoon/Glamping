@@ -249,7 +249,7 @@ export function PrivateInquiry() {
               <Button
                 type="submit"
                 disabled={!isValid || isSubmitting}
-                className="w-full md:w-auto min-w-[300px] text-lg py-6"
+                className="w-full md:w-auto min-w-0 md:min-w-[300px] text-lg py-6"
               >
                 {isSubmitting ? "접수 중..." : "멤버십 상담 신청"}
               </Button>

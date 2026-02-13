@@ -49,7 +49,10 @@ export function Footer() {
 
                 <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-primary-foreground/50">
                     <p>&copy; {new Date().getFullYear()} The Western Glamping. All rights reserved.</p>
-                    <Link href="/#inquiry" className="mt-4 md:mt-0 hover:text-secondary transition-colors">멤버십 상담 바로가기</Link>
+                    <div className="mt-4 md:mt-0 flex items-center gap-4">
+                        <Link href="/privacy" className="hover:text-secondary transition-colors">개인정보처리방침</Link>
+                        <Link href="/terms" className="hover:text-secondary transition-colors">이용약관</Link>
+                    </div>
                 </div>
             </div>
         </footer>

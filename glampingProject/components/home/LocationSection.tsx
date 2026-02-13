@@ -37,7 +37,7 @@ export function LocationSection() {
                             </p>
                             <p>
                                 <strong>Contact</strong><br />
-                                02-000-0000 (100% 예약제)
+                                031-1234-5678 (100% 예약제)
                             </p>
                         </div>
                     </motion.div>

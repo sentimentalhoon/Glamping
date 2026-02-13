@@ -3,6 +3,12 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+  "https://the-western-glamping.com";
+const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const NAVER_SITE_VERIFICATION = process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION;
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -15,7 +21,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://the-western-glamping.com"), // Placeholder URL
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "더 웨스턴 글램핑 | 변산반도 프리미엄 럭셔리 글램핑",
     template: "%s | 더 웨스턴 글램핑",
@@ -37,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "더 웨스턴 글램핑 | 자연 속의 프리미엄 쉼터",
     description: "야생의 아름다움과 호텔의 편안함이 공존하는 곳. 더 웨스턴에서 잊지 못할 추억을 만드세요.",
-    url: "https://the-western-glamping.com",
+    url: SITE_URL,
     siteName: "더 웨스턴 글램핑 (The Western Glamping)",
     images: [
       {
@@ -73,15 +79,19 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   verification: {
-    google: "google-site-verification-placeholder",
-    other: {
-      "naver-site-verification": "naver-site-verification-placeholder",
-    },
+    ...(GOOGLE_SITE_VERIFICATION ? { google: GOOGLE_SITE_VERIFICATION } : {}),
+    ...(NAVER_SITE_VERIFICATION
+      ? {
+          other: {
+            "naver-site-verification": NAVER_SITE_VERIFICATION,
+          },
+        }
+      : {}),
   },
   alternates: {
-    canonical: "https://the-western-glamping.com",
+    canonical: SITE_URL,
     languages: {
-      "ko-KR": "https://the-western-glamping.com",
+      "ko-KR": SITE_URL,
     },
   },
 };
@@ -91,9 +101,9 @@ const jsonLd = {
   "@type": "LodgingBusiness",
   "name": "더 웨스턴 글램핑",
   "alternateName": "The Western Glamping",
-  "url": "https://the-western-glamping.com",
-  "logo": "https://the-western-glamping.com/logo.png",
-  "image": "https://the-western-glamping.com/hero.png",
+  "url": SITE_URL,
+  "logo": `${SITE_URL}/logo.png`,
+  "image": `${SITE_URL}/hero.png`,
   "description": "변산반도 국립공원 내 위치한 프리미엄 럭셔리 글램핑 리조트. 프라이빗 비치와 숲속 독채 객실 제공.",
   "address": {
     "@type": "PostalAddress",
@@ -108,7 +118,7 @@ const jsonLd = {
     "latitude": 35.656426,
     "longitude": 126.501408
   },
-  "telephone": "+82-2-000-0000",
+  "telephone": "+82-31-1234-5678",
   "priceRange": "₩300,000 - ₩800,000",
   "starRating": {
     "@type": "Rating",

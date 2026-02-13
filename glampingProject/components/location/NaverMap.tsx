@@ -23,6 +23,10 @@ export function NaverMap({ className = "" }: NaverMapProps) {
     const mapRef = useRef<HTMLDivElement>(null);
     const mapInstanceRef = useRef<naver.maps.Map | null>(null);
     const [is3D, setIs3D] = useState(true);
+    const [mapReady, setMapReady] = useState(false);
+    const [mapError, setMapError] = useState<string | null>(
+        NAVER_MAP_CLIENT_ID ? null : "지도를 불러올 수 없습니다. 하단 안내 버튼을 이용해 주세요."
+    );
 
     function initMap() {
         if (!mapRef.current || !window.naver) return;
@@ -45,6 +49,8 @@ export function NaverMap({ className = "" }: NaverMapProps) {
 
         const map = new naver.maps.Map(mapRef.current, mapOptions);
         mapInstanceRef.current = map;
+        setMapReady(true);
+        setMapError(null);
 
         // 마커 추가
         new naver.maps.Marker({
@@ -56,19 +62,33 @@ export function NaverMap({ className = "" }: NaverMapProps) {
     }
 
     useEffect(() => {
+        if (!NAVER_MAP_CLIENT_ID) {
+            return;
+        }
+
+        let timerId: number | undefined;
+
         // 네이버 지도 스크립트 로드
         if (!window.naver) {
             const script = document.createElement("script");
             script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${NAVER_MAP_CLIENT_ID}&submodules=panorama`;
             script.async = true;
             script.onload = initMap;
+            script.onerror = () => {
+                setMapError("지도를 불러오지 못했습니다. 네이버 지도로 이동해 주세요.");
+            };
             document.head.appendChild(script);
         } else {
-            initMap();
+            timerId = window.setTimeout(() => {
+                initMap();
+            }, 0);
         }
 
         return () => {
             // Cleanup handled by Naver Map internally usually
+            if (typeof timerId === "number") {
+                window.clearTimeout(timerId);
+            }
         };
     }, []);
 
@@ -101,12 +121,30 @@ export function NaverMap({ className = "" }: NaverMapProps) {
 
     return (
         <div className={`relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden border border-border/50 shadow-2xl ${className}`}>
-            <div ref={mapRef} className="w-full h-full" />
+            {mapError ? (
+                <div className="w-full h-full bg-muted/40 p-6 md:p-8 flex flex-col justify-center items-center text-center">
+                    <p className="text-base md:text-lg font-medium text-primary mb-3">{mapError}</p>
+                    <p className="text-sm text-foreground/70 mb-6 break-keep">
+                        더 웨스턴 글램핑 주소: {GLAMPING_LOCATION.address}
+                    </p>
+                    <a
+                        href={`https://map.naver.com/v5/?c=${GLAMPING_LOCATION.lng},${GLAMPING_LOCATION.lat},17,0,0,0,dh`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-5 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+                    >
+                        네이버 지도에서 열기
+                    </a>
+                </div>
+            ) : (
+                <div ref={mapRef} className="w-full h-full" />
+            )}
             
             {/* Custom Controls */}
             <div className="absolute top-4 right-4 flex flex-col gap-2 z-10">
                 <button 
                     onClick={toggle3D}
+                    disabled={!mapReady}
                     className={`bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg transition-all hover:scale-110 active:scale-95 ${is3D ? 'text-secondary ring-2 ring-secondary' : 'text-primary'}`}
                     title="Satellite View"
                 >
@@ -120,6 +158,7 @@ export function NaverMap({ className = "" }: NaverMapProps) {
                 
                 <button 
                     onClick={toggleRoadView}
+                    disabled={!mapReady}
                     className="bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg text-primary transition-all hover:scale-110 active:scale-95 hover:text-secondary"
                     title="Road View (Naver Map)"
                 >

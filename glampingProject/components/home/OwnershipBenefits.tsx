@@ -40,7 +40,7 @@ export function OwnershipBenefits() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="lg:w-1/3 sticky top-32"
+                        className="lg:w-1/3 lg:sticky lg:top-32"
                     >
                         <span className="section-subheading text-secondary mb-4">Ownership Privilege</span>
                         <h2 className="display-heading mb-8 text-white">
