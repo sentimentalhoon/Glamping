@@ -22,6 +22,7 @@ export function Hero() {
 
             // 3. User Preference (Reduced Motion)
             const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const isMobileViewport = window.matchMedia("(max-width: 768px)").matches;
 
             // 4. Battery Status (Experimental)
             let isLowBattery = false;
@@ -37,7 +38,7 @@ export function Hero() {
                 console.debug("Battery API not supported", e);
             }
 
-            if (isLowConcurrency || isDataSaver || isReducedMotion || isLowBattery) {
+            if (isLowConcurrency || isDataSaver || isReducedMotion || isLowBattery || isMobileViewport) {
                 console.log("Low Power/Performance Mode Detected. Switching to static image.");
                 setIsLowPowerMode(true);
             }
@@ -106,9 +107,10 @@ export function Hero() {
                 <div className="absolute inset-0 w-full h-full">
                     {isLowPowerMode ? (
                         <Image
-                            src="/hero.png"
+                            src="/hero.jpg"
                             alt="Glamping Atmosphere"
                             fill
+                            sizes="100vw"
                             className="object-cover opacity-60"
                             priority
                             placeholder="blur"
@@ -120,6 +122,8 @@ export function Hero() {
                             muted
                             loop
                             playsInline
+                            preload="none"
+                            poster="/hero.jpg"
                             className="w-full h-full object-cover opacity-60"
                         >
                             <source src="/videos/campfire.mp4" type="video/mp4" />

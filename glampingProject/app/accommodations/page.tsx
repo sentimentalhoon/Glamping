@@ -11,9 +11,10 @@ export default function AccommodationsPage() {
             {/* Page Header */}
             <section className="relative h-[50vh] flex items-center justify-center">
                 <Image
-                    src="/hero.png"
+                    src="/hero.jpg"
                     alt="Accommodations"
                     fill
+                    sizes="100vw"
                     className="object-cover brightness-50"
                 />
                 <div className="relative z-10 text-center text-white">
@@ -27,7 +28,7 @@ export default function AccommodationsPage() {
                 {/* Room 1 */}
                 <div className="flex flex-col md:flex-row gap-12 items-center">
                     <div className="w-full md:w-1/2 relative h-[400px] rounded-lg overflow-hidden shadow-xl">
-                        <Image src="/interior.png" alt="Forest Dome" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                        <Image src="/interior.jpg" alt="Forest Dome" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover hover:scale-105 transition-transform duration-700" />
                     </div>
                     <div className="w-full md:w-1/2 space-y-6">
                         <h2 className="text-3xl font-serif font-bold text-primary">포레스트 돔 (Forest Dome)</h2>
@@ -47,7 +48,7 @@ export default function AccommodationsPage() {
                 {/* Room 2 */}
                 <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
                     <div className="w-full md:w-1/2 relative h-[400px] rounded-lg overflow-hidden shadow-xl">
-                        <Image src="/hero.png" alt="Starlight Dome" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                        <Image src="/hero.jpg" alt="Starlight Dome" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover hover:scale-105 transition-transform duration-700" />
                     </div>
                     <div className="w-full md:w-1/2 space-y-6">
                         <h2 className="text-3xl font-serif font-bold text-primary">스타라이트 돔 (Starlight Dome)</h2>

@@ -10,7 +10,7 @@ const collections = [
         title: "The Glass Dome",
         subtitle: "Panoramic Nature View",
         description: "360도 투명 글라스로 마주하는 숲의 파노라마. 침대에 누워 쏟아지는 별을 감상할 수 있는 시그니처 모델.",
-        image: "/hero.png", // Placeholder, reuse hero for now
+        image: "/hero.jpg", // Placeholder, reuse hero for now
         specs: ["12 Pyung", "King Bed", "Private Jacuzzi"]
     },
     {
@@ -18,7 +18,7 @@ const collections = [
         title: "The Forest Lodge",
         subtitle: "Secluded Wood Cabin",
         description: "친환경 목재로 지어진 프라이빗 캐빈. 숲의 향기와 따스한 온기가 감도는 가장 아늑한 은신처.",
-        image: "/interior.png", // Placeholder
+        image: "/interior.jpg", // Placeholder
         specs: ["15 Pyung", "Twin Bed", "Fireplace"]
     }
 ];
@@ -57,6 +57,7 @@ export function TheCollection() {
                                     src={item.image}
                                     alt={item.title}
                                     fill
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
                                     className="object-cover transition-transform duration-[1.5s] ease-in-out group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />

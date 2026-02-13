@@ -21,9 +21,10 @@ export function BrandPhilosophy() {
                 className="absolute top-0 right-0 w-2/3 h-full opacity-5 pointer-events-none"
             >
                 <Image
-                    src="/interior.png"
+                    src="/interior.jpg"
                     alt="Background Ambience"
                     fill
+                    sizes="(max-width: 768px) 100vw, 66vw"
                     className="object-cover grayscale"
                 />
             </motion.div>
@@ -38,9 +39,10 @@ export function BrandPhilosophy() {
                         className="w-full md:w-5/12 aspect-[3/4] relative overflow-hidden rounded-sm shadow-2xl"
                     >
                          <Image
-                            src="/interior.png"
+                            src="/interior.jpg"
                             alt="The Western Interior Philosophy"
                             fill
+                            sizes="(max-width: 768px) 100vw, 42vw"
                             className="object-cover hover:scale-110 transition-transform duration-[3s]"
                         />
                          <div className="absolute inset-0 bg-black/20"></div>

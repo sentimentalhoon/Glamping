@@ -11,9 +11,10 @@ export default function AmenitiesPage() {
             {/* Page Header */}
             <section className="relative h-[50vh] flex items-center justify-center">
                 <Image
-                    src="/hottub.png"
+                    src="/hottub.jpg"
                     alt="Amenities"
                     fill
+                    sizes="100vw"
                     className="object-cover brightness-50"
                 />
                 <div className="relative z-10 text-center text-white">
@@ -46,7 +47,7 @@ export default function AmenitiesPage() {
                             </ul>
                         </div>
                         <div className="relative h-[500px] rounded-lg overflow-hidden shadow-2xl">
-                            <Image src="/dinner.png" alt="Private Dining" fill className="object-cover" />
+                            <Image src="/dinner.jpg" alt="Private Dining" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
                         </div>
                     </div>
                 </div>

@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "더 웨스턴 글램핑 (The Western Glamping)",
     images: [
       {
-        url: "/hero.png", // Fallback image used as OG image
+        url: "/hero.jpg", // Fallback image used as OG image
         width: 1200,
         height: 630,
         alt: "The Western Glamping Hero Image",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "더 웨스턴 글램핑",
     description: "변산반도의 숨겨진 보석, 더 웨스턴 글램핑으로 초대합니다.",
-    images: ["/hero.png"],
+    images: ["/hero.jpg"],
   },
   robots: {
     index: true,
@@ -103,7 +103,7 @@ const jsonLd = {
   "alternateName": "The Western Glamping",
   "url": SITE_URL,
   "logo": `${SITE_URL}/logo.png`,
-  "image": `${SITE_URL}/hero.png`,
+  "image": `${SITE_URL}/hero.jpg`,
   "description": "변산반도 국립공원 내 위치한 프리미엄 럭셔리 글램핑 리조트. 프라이빗 비치와 숲속 독채 객실 제공.",
   "address": {
     "@type": "PostalAddress",

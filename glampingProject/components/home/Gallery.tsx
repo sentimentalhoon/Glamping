@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const images = [
-    { src: "/hero.png", alt: "Night view of the dome", label: "고요한 밤" },
-    { src: "/interior.png", alt: "Interior comfort", label: "아늑한 실내" },
-    { src: "/hottub.png", alt: "Private Hot Tub", label: "숲속 스파" },
-    { src: "/dinner.png", alt: "Private Dining", label: "프라이빗 다이닝" },
+    { src: "/hero.jpg", alt: "Night view of the dome", label: "고요한 밤" },
+    { src: "/interior.jpg", alt: "Interior comfort", label: "아늑한 실내" },
+    { src: "/hottub.jpg", alt: "Private Hot Tub", label: "숲속 스파" },
+    { src: "/dinner.jpg", alt: "Private Dining", label: "프라이빗 다이닝" },
 ];
 
 export function Gallery() {
@@ -42,6 +42,7 @@ export function Gallery() {
                                 src={img.src}
                                 alt={img.alt}
                                 fill
+                                sizes={index === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 25vw"}
                                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
