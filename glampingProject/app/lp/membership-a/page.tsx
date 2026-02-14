@@ -5,7 +5,7 @@ import { CheckCircle2 } from "lucide-react";
 import { MembershipLeadForm } from "@/components/lp/MembershipLeadForm";
 
 export const metadata: Metadata = {
-  title: "멤버십 상담 신청 | The Western",
+  title: "멤버십 상담 신청 | MachaView Club",
   description:
     "프리미엄 글램핑 회원권 상담 랜딩 페이지. 혜택 비교와 현장 투어 예약을 한 번에 신청하세요.",
   robots: {
@@ -34,7 +34,7 @@ export default function MembershipLandingPage() {
       <section className="bg-primary text-primary-foreground">
         <div className="container-width py-6 flex items-center justify-between">
           <Link href="/" className="brand-wordmark text-xl">
-            The Western
+            MachaView Club
           </Link>
           <a
             href="#lead-form"

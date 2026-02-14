@@ -55,7 +55,7 @@ export function InstallPrompt() {
   return (
     <div className="fixed bottom-4 left-4 right-4 z-[100] md:left-auto md:right-6 md:bottom-6 md:max-w-sm">
       <div className="bg-primary text-primary-foreground rounded-2xl shadow-2xl border border-white/15 p-4">
-        <p className="text-sm font-semibold mb-2">더 웨스턴 앱처럼 사용하기</p>
+        <p className="text-sm font-semibold mb-2">마차뷰클럽 앱처럼 사용하기</p>
         {showIosHint ? (
           <p className="text-xs text-primary-foreground/80 leading-relaxed mb-3">
             Safari 하단 공유 버튼을 눌러 &quot;홈 화면에 추가&quot;를 선택하면 앱처럼 사용할 수 있습니다.

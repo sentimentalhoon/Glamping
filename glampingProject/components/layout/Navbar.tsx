@@ -84,7 +84,7 @@ export function Navbar() {
                     className={`brand-wordmark text-xl md:text-2xl transition-colors duration-500 ${isScrolled || isMobileMenuOpen ? "text-primary" : "text-white"
                         }`}
                 >
-                    The Western
+                    MachaView Club
                 </Link>
 
                 {/* Desktop Nav */}

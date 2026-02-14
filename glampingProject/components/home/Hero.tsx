@@ -167,7 +167,7 @@ export function Hero() {
                         <span className="text-white/90">유일한 안식처</span>
                     </h1>
                     <p className="max-w-[34ch] md:max-w-3xl mx-auto text-[15px] md:text-lg text-white/85 mb-12 md:mb-14 font-normal leading-[1.88] break-keep text-balance font-sans">
-                        소유하는 것만으로 자부심이 되는 더 웨스턴의 멤버십.<br />
+                        소유하는 것만으로 자부심이 되는 마차뷰클럽의 멤버십.<br />
                         당신만의 숲 속 별장에서 시간이 멈추는 경험을 선사합니다.
                     </p>
                     

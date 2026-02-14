@@ -5,7 +5,7 @@ import { ShieldCheck, Sparkles, Users2 } from "lucide-react";
 import { MembershipLeadForm } from "@/components/lp/MembershipLeadForm";
 
 export const metadata: Metadata = {
-  title: "VIP 멤버십 빠른 상담 | The Western",
+  title: "VIP 멤버십 빠른 상담 | MachaView Club",
   description:
     "3분 내 상담 요청이 가능한 광고 전용 랜딩. 개인/법인 멤버십 혜택을 빠르게 확인하세요.",
   robots: {
@@ -38,7 +38,7 @@ export default function MembershipLandingBPage() {
       <section className="border-b border-black/10 bg-white/90 backdrop-blur">
         <div className="container-width py-5 flex items-center justify-between">
           <Link href="/" className="brand-wordmark text-xl text-primary">
-            The Western
+            MachaView Club
           </Link>
           <a
             href="#lead-form"

@@ -40,34 +40,34 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "더 웨스턴 글램핑 | 변산반도 프리미엄 럭셔리 글램핑",
-    template: "%s | 더 웨스턴 글램핑",
+    default: "마차뷰클럽 글램핑장 | 변산반도 프리미엄 럭셔리 글램핑",
+    template: "%s | 마차뷰클럽 글램핑장",
   },
-  description: "국내 유일의 프라이빗 비치와 숲속 글램핑. 더 웨스턴 글램핑에서 완벽한 휴식과 하이엔드 아웃도어 라이프를 경험하세요. 100% 예약제 프라이빗 리조트.",
+  description: "국내 유일의 프라이빗 비치와 숲속 글램핑. 마차뷰클럽 글램핑장에서 완벽한 휴식과 하이엔드 아웃도어 라이프를 경험하세요. 100% 예약제 프라이빗 리조트.",
   keywords: [
     "글램핑", "럭셔리 글램핑", "변산반도 숙소", "부안 펜션", "프라이빗 풀빌라", 
-    "더 웨스턴", "The Western", "캠핑장", "호캉스", "전북 여행", "커플 여행", 
+    "마차뷰클럽", "MachaView Club", "캠핑장", "호캉스", "전북 여행", "커플 여행", 
     "감성 숙소", "오션뷰", "숲속 힐링", "프라이빗 비치", "노천탕"
   ],
-  authors: [{ name: "The Western Glamping" }],
-  creator: "The Western Glamping",
-  publisher: "The Western Glamping",
+  authors: [{ name: "MachaView Club Glamping" }],
+  creator: "MachaView Club Glamping",
+  publisher: "MachaView Club Glamping",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "더 웨스턴 글램핑 | 자연 속의 프리미엄 쉼터",
-    description: "야생의 아름다움과 호텔의 편안함이 공존하는 곳. 더 웨스턴에서 잊지 못할 추억을 만드세요.",
+    title: "마차뷰클럽 글램핑장 | 자연 속의 프리미엄 쉼터",
+    description: "야생의 아름다움과 호텔의 편안함이 공존하는 곳. 마차뷰클럽에서 잊지 못할 추억을 만드세요.",
     url: SITE_URL,
-    siteName: "더 웨스턴 글램핑 (The Western Glamping)",
+    siteName: "마차뷰클럽 글램핑장 (MachaView Club Glamping)",
     images: [
       {
         url: "/hero.jpg", // Fallback image used as OG image
         width: 1200,
         height: 630,
-        alt: "The Western Glamping Hero Image",
+        alt: "MachaView Club Glamping Hero Image",
       },
     ],
     locale: "ko_KR",
@@ -75,8 +75,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "더 웨스턴 글램핑",
-    description: "변산반도의 숨겨진 보석, 더 웨스턴 글램핑으로 초대합니다.",
+    title: "마차뷰클럽 글램핑장",
+    description: "변산반도의 숨겨진 보석, 마차뷰클럽 글램핑장으로 초대합니다.",
     images: ["/hero.jpg"],
   },
   robots: {
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     capable: true,
-    title: "더 웨스턴 글램핑",
+    title: "마차뷰클럽 글램핑장",
     statusBarStyle: "black-translucent",
   },
   verification: {
@@ -121,8 +121,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
-  "name": "더 웨스턴 글램핑",
-  "alternateName": "The Western Glamping",
+  "name": "마차뷰클럽 글램핑장",
+  "alternateName": "MachaView Club Glamping",
   "url": SITE_URL,
   "logo": `${SITE_URL}/logo.png`,
   "image": `${SITE_URL}/hero.jpg`,

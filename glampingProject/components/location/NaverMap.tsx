@@ -11,7 +11,7 @@ const NAVER_MAP_CLIENT_ID = process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID || "";
 const GLAMPING_LOCATION = {
     lat: 35.656426, // 부안 고사포 해수욕장 인근
     lng: 126.501408, 
-    name: "더 웨스턴 글램핑",
+    name: "마차뷰클럽 글램핑장",
     address: "전북 부안군 변산면 노루목길 8-8",
 };
 
@@ -125,7 +125,7 @@ export function NaverMap({ className = "" }: NaverMapProps) {
                 <div className="w-full h-full bg-muted/40 p-6 md:p-8 flex flex-col justify-center items-center text-center">
                     <p className="text-base md:text-lg font-medium text-primary mb-3">{mapError}</p>
                     <p className="text-sm text-foreground/70 mb-6 break-keep">
-                        더 웨스턴 글램핑 주소: {GLAMPING_LOCATION.address}
+                        마차뷰클럽 글램핑장 주소: {GLAMPING_LOCATION.address}
                     </p>
                     <a
                         href={`https://map.naver.com/v5/?c=${GLAMPING_LOCATION.lng},${GLAMPING_LOCATION.lat},17,0,0,0,dh`}

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "개인정보처리방침",
-  description: "더 웨스턴 글램핑 개인정보처리방침",
+  description: "마차뷰클럽 글램핑장 개인정보처리방침",
 };
 
 export default function PrivacyPage() {

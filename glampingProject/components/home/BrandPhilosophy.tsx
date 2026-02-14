@@ -40,7 +40,7 @@ export function BrandPhilosophy() {
                     >
                          <Image
                             src="/interior.jpg"
-                            alt="The Western Interior Philosophy"
+                            alt="MachaView Club Interior Philosophy"
                             fill
                             sizes="(max-width: 768px) 100vw, 42vw"
                             className="object-cover hover:scale-110 transition-transform duration-[3s]"
@@ -77,7 +77,7 @@ export function BrandPhilosophy() {
                                     &ldquo;진정한 럭셔리란 자연과 하나되는 순간에 있습니다.&rdquo;
                                 </p>
                                 <p className="text-foreground/72 leading-[1.9]">
-                                    더 웨스턴 글램핑은 변산반도의 때 묻지 않은 숲과 바다 사이에 자리 잡고 있습니다. 
+                                    마차뷰클럽 글램핑장은 변산반도의 때 묻지 않은 숲과 바다 사이에 자리 잡고 있습니다. 
                                     우리는 단순히 머무는 곳이 아닌, 자연의 감각을 온전히 깨우는 경험을 제안합니다.
                                 </p>
                             </motion.div>
@@ -91,7 +91,7 @@ export function BrandPhilosophy() {
                             >
                                 <div className="flex items-center gap-4">
                                     <div className="h-[1px] w-12 bg-foreground/20"></div>
-                                    <span className="font-serif italic text-foreground/60">The Western Creative Director</span>
+                                    <span className="font-serif italic text-foreground/60">MachaView Club Creative Director</span>
                                 </div>
                             </motion.div>
                         </div>

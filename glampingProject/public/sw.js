@@ -1,11 +1,10 @@
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v2";
 const STATIC_CACHE = `glamping-static-${CACHE_VERSION}`;
 const IMAGE_CACHE = `glamping-images-${CACHE_VERSION}`;
 
 const PRECACHE_URLS = [
   "/",
   "/offline",
-  "/manifest.webmanifest",
   "/hero.jpg",
   "/interior.jpg",
   "/hottub.jpg",

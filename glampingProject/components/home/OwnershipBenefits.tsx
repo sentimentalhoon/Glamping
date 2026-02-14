@@ -48,7 +48,7 @@ export function OwnershipBenefits() {
                             <span className="text-white/70">특권</span>
                         </h2>
                         <p className="text-white/68 font-normal leading-[1.85] mb-10 text-base md:text-lg">
-                            더 웨스턴 멤버십은 단순한 이용권이 아닙니다.<br />
+                            마차뷰클럽 멤버십은 단순한 이용권이 아닙니다.<br />
                             당신의 품격에 걸맞은 하이엔드 라이프스타일 제안입니다.
                         </p>
                         <Button href="/#inquiry" variant="secondary">

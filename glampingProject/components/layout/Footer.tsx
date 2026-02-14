@@ -7,9 +7,9 @@ export function Footer() {
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                     <div className="space-y-4">
-                        <h3 className="brand-wordmark text-2xl text-secondary">더 웨스턴</h3>
+                        <h3 className="brand-wordmark text-2xl text-secondary">마차뷰클럽</h3>
                         <p className="text-primary-foreground/80 leading-relaxed max-w-sm break-keep">
-                            더 웨스턴 글램핑 멤버십은 자연 속 프라이빗 휴식과 자산 가치를 함께 제안합니다.
+                            마차뷰클럽 글램핑장 멤버십은 자연 속 프라이빗 휴식과 자산 가치를 함께 제안합니다.
                         </p>
                     </div>
 
@@ -45,7 +45,7 @@ export function Footer() {
                 </div>
 
                 <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-primary-foreground/50">
-                    <p>&copy; {new Date().getFullYear()} The Western Glamping. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} MachaView Club Glamping. All rights reserved.</p>
                     <div className="mt-4 md:mt-0 flex items-center gap-4">
                         <Link href="/privacy" className="hover:text-secondary transition-colors">개인정보처리방침</Link>
                         <Link href="/terms" className="hover:text-secondary transition-colors">이용약관</Link>

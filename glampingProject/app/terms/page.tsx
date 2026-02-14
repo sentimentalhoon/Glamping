@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "이용약관",
-  description: "더 웨스턴 글램핑 이용약관",
+  description: "마차뷰클럽 글램핑장 이용약관",
 };
 
 export default function TermsPage() {
@@ -22,7 +22,7 @@ export default function TermsPage() {
         <div>
           <h2 className="text-xl font-semibold text-primary mb-3">1. 목적</h2>
           <p className="text-foreground/80">
-            본 약관은 더 웨스턴 글램핑의 웹사이트 및 멤버십 상담 서비스 이용 조건과 절차를 규정합니다.
+            본 약관은 마차뷰클럽 글램핑장의 웹사이트 및 멤버십 상담 서비스 이용 조건과 절차를 규정합니다.
           </p>
         </div>
 

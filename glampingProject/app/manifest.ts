@@ -2,8 +2,9 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: '더 웨스턴 글램핑',
-    short_name: 'The Western',
+    id: '/',
+    name: '마차뷰클럽 글램핑장',
+    short_name: 'MachaView Club',
     description: '변산반도 프리미엄 럭셔리 글램핑',
     start_url: '/',
     display: 'standalone',

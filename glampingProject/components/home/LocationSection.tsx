@@ -29,7 +29,7 @@ export function LocationSection() {
                             <p>
                                 변산반도의 붉은 노을이 머무는 곳.<br />
                                 고사포 해변의 솔숲과 서해의 파도 소리가 어우러진 
-                                더 웨스턴 프라이빗 에스테이트가 당신을 기다립니다.
+                                마차뷰클럽 프라이빗 에스테이트가 당신을 기다립니다.
                             </p>
                             <p>
                                 <strong>Address</strong><br />
