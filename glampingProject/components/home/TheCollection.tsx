@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -9,16 +9,16 @@ const collections = [
         id: "glass-dome",
         title: "The Glass Dome",
         subtitle: "Panoramic Nature View",
-        description: "360???�명 글?�스�?마주?�는 ?�의 ?�노?�마. 침�????�워 ?�아지??별을 감상?????�는 ?�그?�처 모델.",
-        image: "/collection-wagon-valley.jpg"
+        description: "360???щ챸 湲?쇱뒪濡?留덉＜?섎뒗 ?뀁쓽 ?뚮끂?쇰쭏. 移⑤????꾩썙 ?잛븘吏??蹂꾩쓣 媛먯긽?????덈뒗 ?쒓렇?덉쿂 紐⑤뜽.",
+        image: "/collection-wagon-valley.jpg",
         specs: ["12 Pyung", "King Bed", "Private Jacuzzi"]
     },
     {
         id: "forest-lodge",
         title: "The Forest Lodge",
         subtitle: "Secluded Wood Cabin",
-        description: "친환�?목재�?지?�진 ?�라?�빗 캐빈. ?�의 ?�기?� ?�스???�기가 감도??가???�늑???�?�처.",
-        image: "/collection-wagon-forest.jpg"
+        description: "移쒗솚寃?紐⑹옱濡?吏?댁쭊 ?꾨씪?대퉿 罹먮퉰. ?뀁쓽 ?κ린? ?곗뒪???④린媛 媛먮룄??媛???꾨뒔????좎쿂.",
+        image: "/collection-wagon-forest.jpg",
         specs: ["15 Pyung", "Twin Bed", "Fireplace"]
     }
 ];
@@ -37,8 +37,8 @@ export function TheCollection() {
                     <span className="section-subheading">The Collection</span>
                     <h2 className="display-heading text-foreground mb-6">Architectural Masterpieces</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg font-normal leading-[1.85]">
-                        ?�연??거스르�? ?�고 ?�며?�는 건축.<br />
-                        마차뷰클?�의 컬렉?��? 공간 �??�체�??�술???�니??
+                        ?먯뿰??嫄곗뒪瑜댁? ?딄퀬 ?ㅻŉ?쒕뒗 嫄댁텞.<br />
+                        留덉감酉고겢?쎌쓽 而щ젆?섏? 怨듦컙 洹??먯껜濡??덉닠???⑸땲??
                     </p>
                 </motion.div>
 
@@ -93,4 +93,5 @@ export function TheCollection() {
         </section>
     );
 }
+
 

@@ -1,4 +1,4 @@
-"use client";
+ï»¿"use client";
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
@@ -163,12 +163,15 @@ export function Hero() {
                         The Private Estate
                     </span>
                     <h1 className="display-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[-0.024em] mb-8 md:mb-10 break-keep text-balance drop-shadow-lg text-white max-w-[22ch] md:max-w-4xl">
-                        ?ì—°???ˆë½??br />
-                        <span className="text-white/90">? ì¼???ˆì‹ì²?/span>
+                        Nature, comfort, and design in one private escape
+                        <br />
+                        <span className="text-white/90">A wagon-style glamping experience</span>
                     </h1>
                     <p className="max-w-[34ch] md:max-w-3xl mx-auto text-[15px] md:text-lg text-white/85 mb-12 md:mb-14 font-normal leading-[1.88] break-keep text-balance font-sans">
-                        ?Œìœ ?˜ëŠ” ê²ƒë§Œ?¼ë¡œ ?ë??¬ì´ ?˜ëŠ” ë§ˆì°¨ë·°í´?½ì˜ ë©¤ë²„??<br />
-                        ?¹ì‹ ë§Œì˜ ????ë³„ì¥?ì„œ ?œê°„??ë©ˆì¶”??ê²½í—˜??? ì‚¬?©ë‹ˆ??
+                        Step into a curated retreat where quiet landscape, warm light,
+                        and thoughtful hospitality come together.
+                        <br />
+                        Discover your own private rhythm at Machaview Club Glamping.
                     </p>
                     
                     <div className="flex justify-center items-center transform-gpu translate-z-20">
@@ -178,7 +181,7 @@ export function Hero() {
                             size="lg"
                             className="min-w-[220px] md:min-w-[240px] text-base md:text-lg tracking-[0.06em] py-3.5 md:py-4 px-8 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
                         >
-                            ë©¤ë²„???ë‹´ ? ì²­
+                            Request Membership Consultation
                         </Button>
                     </div>
                 </motion.div>
@@ -196,4 +199,5 @@ export function Hero() {
         </section>
     );
 }
+
 
