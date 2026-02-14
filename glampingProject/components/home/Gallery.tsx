@@ -1,13 +1,13 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const images = [
-  { src: "/hero.jpg", alt: "Night view of the dome", label: "고요한 밤" },
-  { src: "/interior.jpg", alt: "Interior comfort", label: "프라이빗 인테리어" },
-  { src: "/hottub.jpg", alt: "Private Hot Tub", label: "숲속 스파" },
-  { src: "/dinner.jpg", alt: "Private Dining", label: "프라이빗 다이닝" },
+  { src: "/hero.jpg", alt: "Wagon-style glamping cabin at sunset", label: "Valley Wagon View" },
+  { src: "/interior.jpg", alt: "Warm wagon-style glamping interior", label: "Wagon Interior" },
+  { src: "/hottub.jpg", alt: "Private forest hot tub near wagon cabin", label: "Forest Spa" },
+  { src: "/dinner.jpg", alt: "Private outdoor dinner by wagon cabin", label: "Firelight Dining" },
 ];
 
 export function Gallery() {
@@ -21,9 +21,9 @@ export function Gallery() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="section-heading mb-4">자연 속의 순간들</h2>
+          <h2 className="section-heading mb-4">Wagon Glamping Moments</h2>
           <p className="text-foreground/72 max-w-2xl mx-auto break-keep text-base md:text-lg font-normal leading-[1.85]">
-            당신을 기다리는 잊지 못할 추억의 장면들입니다.
+            A cinematic preview of our wagon-style private glamping experience.
           </p>
         </motion.div>
 

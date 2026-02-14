@@ -108,7 +108,7 @@ export function Hero() {
                     {isLowPowerMode ? (
                         <Image
                             src="/hero.jpg"
-                            alt="Glamping Atmosphere"
+                            alt="Wagon-style glamping cabin at dusk"
                             fill
                             sizes="100vw"
                             className="object-cover opacity-60"
@@ -163,12 +163,12 @@ export function Hero() {
                         The Private Estate
                     </span>
                     <h1 className="display-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[-0.024em] mb-8 md:mb-10 break-keep text-balance drop-shadow-lg text-white max-w-[22ch] md:max-w-4xl">
-                        자연이 허락한<br />
-                        <span className="text-white/90">유일한 안식처</span>
+                        ?�연???�락??br />
+                        <span className="text-white/90">?�일???�식�?/span>
                     </h1>
                     <p className="max-w-[34ch] md:max-w-3xl mx-auto text-[15px] md:text-lg text-white/85 mb-12 md:mb-14 font-normal leading-[1.88] break-keep text-balance font-sans">
-                        소유하는 것만으로 자부심이 되는 마차뷰클럽의 멤버십.<br />
-                        당신만의 숲 속 별장에서 시간이 멈추는 경험을 선사합니다.
+                        ?�유?�는 것만?�로 ?��??�이 ?�는 마차뷰클?�의 멤버??<br />
+                        ?�신만의 ????별장?�서 ?�간??멈추??경험???�사?�니??
                     </p>
                     
                     <div className="flex justify-center items-center transform-gpu translate-z-20">
@@ -178,7 +178,7 @@ export function Hero() {
                             size="lg"
                             className="min-w-[220px] md:min-w-[240px] text-base md:text-lg tracking-[0.06em] py-3.5 md:py-4 px-8 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
                         >
-                            멤버십 상담 신청
+                            멤버???�담 ?�청
                         </Button>
                     </div>
                 </motion.div>
@@ -196,3 +196,4 @@ export function Hero() {
         </section>
     );
 }
+

@@ -9,16 +9,16 @@ const collections = [
         id: "glass-dome",
         title: "The Glass Dome",
         subtitle: "Panoramic Nature View",
-        description: "360도 투명 글라스로 마주하는 숲의 파노라마. 침대에 누워 쏟아지는 별을 감상할 수 있는 시그니처 모델.",
-        image: "/hero.jpg", // Placeholder, reuse hero for now
+        description: "360???�명 글?�스�?마주?�는 ?�의 ?�노?�마. 침�????�워 ?�아지??별을 감상?????�는 ?�그?�처 모델.",
+        image: "/collection-wagon-valley.jpg"
         specs: ["12 Pyung", "King Bed", "Private Jacuzzi"]
     },
     {
         id: "forest-lodge",
         title: "The Forest Lodge",
         subtitle: "Secluded Wood Cabin",
-        description: "친환경 목재로 지어진 프라이빗 캐빈. 숲의 향기와 따스한 온기가 감도는 가장 아늑한 은신처.",
-        image: "/interior.jpg", // Placeholder
+        description: "친환�?목재�?지?�진 ?�라?�빗 캐빈. ?�의 ?�기?� ?�스???�기가 감도??가???�늑???�?�처.",
+        image: "/collection-wagon-forest.jpg"
         specs: ["15 Pyung", "Twin Bed", "Fireplace"]
     }
 ];
@@ -37,8 +37,8 @@ export function TheCollection() {
                     <span className="section-subheading">The Collection</span>
                     <h2 className="display-heading text-foreground mb-6">Architectural Masterpieces</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg font-normal leading-[1.85]">
-                        자연을 거스르지 않고 스며드는 건축.<br />
-                        마차뷰클럽의 컬렉션은 공간 그 자체로 예술이 됩니다.
+                        ?�연??거스르�? ?�고 ?�며?�는 건축.<br />
+                        마차뷰클?�의 컬렉?��? 공간 �??�체�??�술???�니??
                     </p>
                 </motion.div>
 
@@ -93,3 +93,4 @@ export function TheCollection() {
         </section>
     );
 }
+
