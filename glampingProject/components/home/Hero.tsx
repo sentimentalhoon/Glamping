@@ -163,15 +163,15 @@ export function Hero() {
                         The Private Estate
                     </span>
                     <h1 className="display-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[-0.024em] mb-8 md:mb-10 break-keep text-balance drop-shadow-lg text-white max-w-[22ch] md:max-w-4xl">
-                        Nature, comfort, and design in one private escape
+                        자연 속에서 누리는
                         <br />
-                        <span className="text-white/90">A wagon-style glamping experience</span>
+                        <span className="text-white/90">프라이빗 웨건 글램핑</span>
                     </h1>
                     <p className="max-w-[34ch] md:max-w-3xl mx-auto text-[15px] md:text-lg text-white/85 mb-12 md:mb-14 font-normal leading-[1.88] break-keep text-balance font-sans">
-                        Step into a curated retreat where quiet landscape, warm light,
-                        and thoughtful hospitality come together.
+                        따뜻한 조명, 고요한 풍경, 세심한 공간 설계가 어우러진
+                        마차뷰 클럽 글램핑의 시그니처 스테이를 경험해보세요.
                         <br />
-                        Discover your own private rhythm at Machaview Club Glamping.
+                        오직 당신만의 리듬으로 머무는 특별한 하루를 제안합니다.
                     </p>
                     
                     <div className="flex justify-center items-center transform-gpu translate-z-20">
@@ -181,7 +181,7 @@ export function Hero() {
                             size="lg"
                             className="min-w-[220px] md:min-w-[240px] text-base md:text-lg tracking-[0.06em] py-3.5 md:py-4 px-8 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
                         >
-                            Request Membership Consultation
+                            멤버십 상담 요청
                         </Button>
                     </div>
                 </motion.div>

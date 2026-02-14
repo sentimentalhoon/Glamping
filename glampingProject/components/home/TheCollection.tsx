@@ -7,19 +7,19 @@ import { ArrowRight } from "lucide-react";
 const collections = [
     {
         id: "glass-dome",
-        title: "The Glass Dome",
+        title: "밸리 웨건 스위트",
         subtitle: "Panoramic Nature View",
-        description: "360???щ챸 湲?쇱뒪濡?留덉＜?섎뒗 ?뀁쓽 ?뚮끂?쇰쭏. 移⑤????꾩썙 ?잛븘吏??蹂꾩쓣 媛먯긽?????덈뒗 ?쒓렇?덉쿂 紐⑤뜽.",
+        description: "탁 트인 계곡 전망과 함께하는 프라이빗 웨건 스테이. 노을과 별빛을 한 공간에서 누릴 수 있는 시그니처 타입입니다.",
         image: "/collection-wagon-valley.jpg",
-        specs: ["12 Pyung", "King Bed", "Private Jacuzzi"]
+        specs: ["12평", "킹 베드", "프라이빗 자쿠지"]
     },
     {
         id: "forest-lodge",
-        title: "The Forest Lodge",
+        title: "포레스트 웨건 로지",
         subtitle: "Secluded Wood Cabin",
-        description: "移쒗솚寃?紐⑹옱濡?吏?댁쭊 ?꾨씪?대퉿 罹먮퉰. ?뀁쓽 ?κ린? ?곗뒪???④린媛 媛먮룄??媛???꾨뒔????좎쿂.",
+        description: "숲의 깊은 정취를 담은 우드 무드 웨건 객실. 아늑한 분위기와 조용한 휴식에 집중한 프리미엄 타입입니다.",
         image: "/collection-wagon-forest.jpg",
-        specs: ["15 Pyung", "Twin Bed", "Fireplace"]
+        specs: ["15평", "트윈 베드", "파이어플레이스"]
     }
 ];
 
@@ -35,10 +35,11 @@ export function TheCollection() {
                     className="text-center mb-20"
                 >
                     <span className="section-subheading">The Collection</span>
-                    <h2 className="display-heading text-foreground mb-6">Architectural Masterpieces</h2>
+                    <h2 className="display-heading text-foreground mb-6">웨건 컬렉션</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg font-normal leading-[1.85]">
-                        ?먯뿰??嫄곗뒪瑜댁? ?딄퀬 ?ㅻŉ?쒕뒗 嫄댁텞.<br />
-                        留덉감酉고겢?쎌쓽 而щ젆?섏? 怨듦컙 洹??먯껜濡??덉닠???⑸땲??
+                        자연의 결을 살린 디자인과 프라이빗한 동선을 담아
+                        <br />
+                        웨건 스타일 글램핑의 새로운 기준을 제안합니다.
                     </p>
                 </motion.div>
 

@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const images = [
-  { src: "/hero.jpg", alt: "Wagon-style glamping cabin at sunset", label: "Valley Wagon View" },
-  { src: "/interior.jpg", alt: "Warm wagon-style glamping interior", label: "Wagon Interior" },
-  { src: "/hottub.jpg", alt: "Private forest hot tub near wagon cabin", label: "Forest Spa" },
-  { src: "/dinner.jpg", alt: "Private outdoor dinner by wagon cabin", label: "Firelight Dining" },
+  { src: "/hero.jpg", alt: "노을빛 웨건 글램핑 전경", label: "노을 속 웨건" },
+  { src: "/interior.jpg", alt: "따뜻한 웨건 스타일 인테리어", label: "프라이빗 인테리어" },
+  { src: "/hottub.jpg", alt: "숲속 웨건 스파 공간", label: "숲속 스파" },
+  { src: "/dinner.jpg", alt: "웨건 앞 프라이빗 다이닝", label: "파이어라이트 다이닝" },
 ];
 
 export function Gallery() {
@@ -21,9 +21,9 @@ export function Gallery() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="section-heading mb-4">Wagon Glamping Moments</h2>
+          <h2 className="section-heading mb-4">웨건 글램핑의 순간</h2>
           <p className="text-foreground/72 max-w-2xl mx-auto break-keep text-base md:text-lg font-normal leading-[1.85]">
-            A cinematic preview of our wagon-style private glamping experience.
+            마차뷰 클럽 글램핑에서만 만날 수 있는 감성적인 웨건 스테이를 미리 만나보세요.
           </p>
         </motion.div>
 
